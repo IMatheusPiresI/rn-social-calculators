@@ -6,7 +6,7 @@ export const useEmergencyReserveForm = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<IFormEmergencyReserveValues>({
     values: {
       fixedCost: '',
@@ -19,5 +19,6 @@ export const useEmergencyReserveForm = () => {
     control,
     handleSubmit,
     errors,
+    isValid,
   };
 };

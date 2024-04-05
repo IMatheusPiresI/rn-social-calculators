@@ -1,73 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Frame } from '../../components/UI/Frame';
 import { Box } from '../../components/UI/Box';
 import { MaskTextInputForm } from '../../components/Form/MaskTextInputForm';
 import { Masks } from 'react-native-mask-input';
 import { PeriodValueInput } from '../../components/Form/PeriodValueInput';
-import { IPeriodType } from '../../components/Form/PeriodValueInput/types';
-import { IDataChart } from '../../components/ChartInterestEvolution/types';
 import { Button } from '../../components/UI/Button';
 import { Typograph } from '../../components/UI/Typograph';
-import { IDataTable } from '../../components/TableInterestEvolution/types';
 import { ModalInterestTableChart } from '../../components/Modal/ModalInterestTableChart';
-import { useCompoundInterestForm } from './hooks/useCompoundInterestForm';
 import { useCompoundInterest } from './hooks/useCompoundInterest';
-import { IFormCompoundInterestValues } from './hooks/useCompoundInterestForm/types';
-import { formatOnlyNumbersCurrency } from '../../resources/utils/formatOnlyNumbersCurrency';
-import { formatPeriodNumberValue } from '../../resources/utils/formatPeriodNumberValue';
 
 const CompoundInterest = () => {
-  const { control, handleSubmit, errors } = useCompoundInterestForm();
-
-  const { getCompoundInterest } = useCompoundInterest();
-
-  const [showModalInterest, setShowModalInterest] = useState<boolean>(false);
-  const [periodInterestRate, setPeriodInterestRate] = useState<IPeriodType>(
-    IPeriodType.YEARLY,
-  );
-  const [periodTime, setPeriodTime] = useState<IPeriodType>(IPeriodType.YEARLY);
-  const [dataChart, setDataChart] = useState<IDataChart[]>([]);
-  const [dataTable, setDataTable] = useState<IDataTable[]>([]);
-
-  const openModalInterest = () => {
-    setShowModalInterest(true);
-  };
-
-  const handleCloseModalInterest = () => {
-    setShowModalInterest(false);
-  };
-
-  const submitCompoundInsterestForm = (values: IFormCompoundInterestValues) => {
-    const result = getCompoundInterest({
-      initialValue: formatOnlyNumbersCurrency(values.initialValue),
-      interestPeriodRate: periodInterestRate,
-      interestPeriodValue: formatPeriodNumberValue(
-        values.interestRatePeriodValue,
-      ),
-
-      monthlyValue: formatOnlyNumbersCurrency(values.monthlyValue),
-      timePeriod: periodTime,
-      timePeriodValue: formatOnlyNumbersCurrency(values.timePeriodValue),
-    });
-
-    const dataChart: IDataChart[] = result.monthsInterest.map((data) => ({
-      initialValue: result.initialValue,
-      monthlyInterest: data.monthValue,
-      months: data.index,
-    }));
-
-    const dataTable: IDataTable[] = result.monthsInterest.map((data) => ({
-      months: data.index,
-      monthlyInterest: data.monthInterest,
-      totalInterest: data.totalInterest,
-      totalInvested: result.initialValue + result.monthlyValue * data.index,
-      total: data.monthValue,
-    }));
-
-    setDataChart(dataChart);
-    setDataTable(dataTable);
-    openModalInterest();
-  };
+  const {
+    control,
+    dataChart,
+    dataTable,
+    errors,
+    handleCloseModalInterest,
+    handleSubmit,
+    periodInterestRate,
+    periodTime,
+    setPeriodInterestRate,
+    setPeriodTime,
+    showModalInterest,
+    submitCompoundInsterestForm,
+  } = useCompoundInterest();
 
   return (
     <Frame title="Juros Compostos" canGoBack scrollable>

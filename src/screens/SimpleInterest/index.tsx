@@ -1,74 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSimpleInterest } from './hooks/useSimpleInterest';
-import { useSimpleInterestForm } from './hooks/useSimpleInterestForm';
-import { IFormSimpleInterestValues } from './hooks/useSimpleInterestForm/types';
 import { Frame } from '../../components/UI/Frame';
 import { Box } from '../../components/UI/Box';
 import { MaskTextInputForm } from '../../components/Form/MaskTextInputForm';
 import { Masks } from 'react-native-mask-input';
 import { PeriodValueInput } from '../../components/Form/PeriodValueInput';
-import { formatOnlyNumbersCurrency } from '../../resources/utils/formatOnlyNumbersCurrency';
-import { IDataChart } from '../../components/ChartInterestEvolution/types';
 import { Button } from '../../components/UI/Button';
 import { Typograph } from '../../components/UI/Typograph';
-import { IDataTable } from '../../components/TableInterestEvolution/types';
 import { ModalInterestTableChart } from '../../components/Modal/ModalInterestTableChart';
-import { formatPeriodNumberValue } from '../../resources/utils/formatPeriodNumberValue';
-import { PeriodType } from '../../components/Form/PeriodValueInput/constants';
 
 const SimpleInterest = () => {
-  const { control, errors, handleSubmit } = useSimpleInterestForm();
-  const { getMonthlySimpleInterestRate } = useSimpleInterest();
-
-  const [showModalInterest, setShowModalInterest] = useState<boolean>(false);
-  const [periodInterestRate, setPeriodInterestRate] = useState<PeriodType>(
-    PeriodType.YEARLY,
-  );
-  const [periodTime, setPeriodTime] = useState<PeriodType>(PeriodType.YEARLY);
-  const [dataForm, setDataForm] = useState<IDataChart[]>([]);
-  const [dataTable, setDataTable] = useState<IDataTable[]>([]);
-
-  const openModalInterest = () => {
-    setShowModalInterest(true);
-  };
-
-  const handleCloseModalInterest = () => {
-    setShowModalInterest(false);
-  };
-
-  const submitSimpleInsterestForm = (values: IFormSimpleInterestValues) => {
-    const result = getMonthlySimpleInterestRate({
-      initialValue: formatOnlyNumbersCurrency(values.initialValue),
-      interestPeriodValue: formatPeriodNumberValue(
-        values.interestRatePeriodValue,
-      ),
-      timePeriodValue: formatPeriodNumberValue(values.timePeriodValue),
-      periodInterestRate: periodInterestRate,
-      timePeriod: periodTime,
-    });
-
-    const dataChart: IDataChart[] = result.monthlyInterest.map(
-      (monthlyValue, monthIndex) => ({
-        monthlyInterest: result.initialValue + monthlyValue,
-        months: monthIndex + 1,
-        initialValue: result.initialValue,
-      }),
-    );
-
-    const dataTable: IDataTable[] = result.monthlyInterest.map(
-      (monthlyValue, monthIndex) => ({
-        months: monthIndex,
-        monthlyInterest: monthlyValue,
-        total: result.initialValue + monthlyValue,
-        totalInterest: monthlyValue,
-        totalInvested: result.initialValue,
-      }),
-    );
-
-    setDataForm(dataChart);
-    setDataTable(dataTable);
-    openModalInterest();
-  };
+  const {
+    control,
+    dataForm,
+    dataTable,
+    errors,
+    handleCloseModalInterest,
+    handleSubmit,
+    periodInterestRate,
+    periodTime,
+    setPeriodInterestRate,
+    setPeriodTime,
+    showModalInterest,
+    submitSimpleInsterestForm,
+  } = useSimpleInterest();
 
   return (
     <Frame title="Juros Simples" canGoBack scrollable>

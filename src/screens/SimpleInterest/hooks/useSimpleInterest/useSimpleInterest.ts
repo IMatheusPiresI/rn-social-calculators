@@ -1,12 +1,39 @@
-import { IPeriodType } from '../../../../components/Form/PeriodValueInput/types';
+import { useState } from 'react';
+import { IDataChart } from '../../../../components/ChartInterestEvolution/types';
+import { IDataTable } from '../../../../components/TableInterestEvolution/types';
+import { formatOnlyNumbersCurrency } from '../../../../resources/utils/formatOnlyNumbersCurrency';
+import { formatPeriodNumberValue } from '../../../../resources/utils/formatPeriodNumberValue';
 import { getInterestRateMonthly } from '../../../../resources/utils/getInterestRateMonthly';
 import { getPeriodMonthly } from '../../../../resources/utils/getPeriodMonthly';
+import {
+  IFormSimpleInterestValues,
+  useSimpleInterestForm,
+} from '../useSimpleInterestForm';
 import {
   IGetMonthlySimpleInterestRateParams,
   IResponseSimpleInterest,
 } from './types';
+import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
 
 export const useSimpleInterest = () => {
+  const { control, errors, handleSubmit } = useSimpleInterestForm();
+
+  const [showModalInterest, setShowModalInterest] = useState<boolean>(false);
+  const [periodInterestRate, setPeriodInterestRate] = useState<PeriodType>(
+    PeriodType.YEARLY,
+  );
+  const [periodTime, setPeriodTime] = useState<PeriodType>(PeriodType.YEARLY);
+  const [dataForm, setDataForm] = useState<IDataChart[]>([]);
+  const [dataTable, setDataTable] = useState<IDataTable[]>([]);
+
+  const openModalInterest = () => {
+    setShowModalInterest(true);
+  };
+
+  const handleCloseModalInterest = () => {
+    setShowModalInterest(false);
+  };
+
   const getValueSimpleInterest = (
     initialValue: number,
     timePeriodValue: number,
@@ -53,7 +80,52 @@ export const useSimpleInterest = () => {
     };
   };
 
+  const submitSimpleInsterestForm = (values: IFormSimpleInterestValues) => {
+    const result = getMonthlySimpleInterestRate({
+      initialValue: formatOnlyNumbersCurrency(values.initialValue),
+      interestPeriodValue: formatPeriodNumberValue(
+        values.interestRatePeriodValue,
+      ),
+      timePeriodValue: formatPeriodNumberValue(values.timePeriodValue),
+      periodInterestRate: periodInterestRate,
+      timePeriod: periodTime,
+    });
+
+    const dataChart: IDataChart[] = result.monthlyInterest.map(
+      (monthlyValue, monthIndex) => ({
+        monthlyInterest: result.initialValue + monthlyValue,
+        months: monthIndex + 1,
+        initialValue: result.initialValue,
+      }),
+    );
+
+    const dataTable: IDataTable[] = result.monthlyInterest.map(
+      (monthlyValue, monthIndex) => ({
+        months: monthIndex,
+        monthlyInterest: monthlyValue,
+        total: result.initialValue + monthlyValue,
+        totalInterest: monthlyValue,
+        totalInvested: result.initialValue,
+      }),
+    );
+
+    setDataForm(dataChart);
+    setDataTable(dataTable);
+    openModalInterest();
+  };
+
   return {
-    getMonthlySimpleInterestRate,
+    control,
+    errors,
+    periodInterestRate,
+    setPeriodInterestRate,
+    periodTime,
+    setPeriodTime,
+    handleSubmit,
+    submitSimpleInsterestForm,
+    showModalInterest,
+    dataForm,
+    dataTable,
+    handleCloseModalInterest,
   };
 };

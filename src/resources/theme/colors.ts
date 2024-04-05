@@ -5,6 +5,7 @@ const palette = {
   blue_200: 'rgb(4, 76, 137)',
   transparent_blue_200: 'rgba(4, 76, 137, 0.8)',
   gray: '#CCCC',
+  gray_600: '#a29393',
   error: '#f72525',
 };
 
@@ -21,6 +22,7 @@ export const colors = {
   chartColor: palette.white,
   tableColor: palette.white,
   error: palette.error,
+  disabled: palette.gray_600,
 };
 
 export type IColors = keyof typeof colors;

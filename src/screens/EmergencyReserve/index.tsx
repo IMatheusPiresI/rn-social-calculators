@@ -8,26 +8,20 @@ import { Button } from '../../components/UI/Button';
 import { Typograph } from '../../components/UI/Typograph';
 import { BoxSelectPercentage } from '../../components/BoxSelectPercentage/ index';
 import { useEmergencyReserve } from './hooks/useEmergencyReserve';
-import { formatOnlyNumbersCurrency } from '../../resources/utils/formatOnlyNumbersCurrency';
-import {
-  IFormEmergencyReserveValues,
-  useEmergencyReserveForm,
-} from './hooks/useEmergencyReserveForm';
+import { ButtonSelectProfission } from '../../components/ButtonSelectProfission';
 
 const EmergencyReserve = () => {
-  const { control, errors, handleSubmit } = useEmergencyReserveForm();
-  const { percentageSize, setPercentageSize } = useEmergencyReserve();
-
-  const openModalInterest = () => {};
-
-  const handleCloseModalInterest = () => {};
-
-  const submitSimpleInsterestForm = (values: IFormEmergencyReserveValues) => {
-    const fixedCost = formatOnlyNumbersCurrency(values.fixedCost);
-    const monthlySalary = formatOnlyNumbersCurrency(values.monthlySalary);
-    console.log(fixedCost);
-    console.log(monthlySalary);
-  };
+  const {
+    control,
+    errors,
+    handleSubmit,
+    percentageSize,
+    setPercentageSize,
+    profissionSelected,
+    setProfissionSelected,
+    submitSimpleInsterestForm,
+    disabledButton,
+  } = useEmergencyReserve();
 
   return (
     <Frame title="Reserva de Emergência" canGoBack scrollable>
@@ -37,6 +31,13 @@ const EmergencyReserve = () => {
         </Typograph>
       </Box>
       <Box flex={1}>
+        <Box marginBottom={20}>
+          <ButtonSelectProfission
+            label="Profissão"
+            profissionSelected={profissionSelected}
+            setProfissionSelected={setProfissionSelected}
+          />
+        </Box>
         <Box>
           <MaskTextInputForm
             control={control}
@@ -70,6 +71,7 @@ const EmergencyReserve = () => {
         <Button
           onPress={handleSubmit(submitSimpleInsterestForm)}
           title="Calcular"
+          disabled={disabledButton}
         />
       </Box>
     </Frame>

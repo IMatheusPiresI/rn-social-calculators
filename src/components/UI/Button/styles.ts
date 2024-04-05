@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export const Button = styled.TouchableOpacity`
   padding: 12px;
@@ -6,4 +6,10 @@ export const Button = styled.TouchableOpacity`
   border-radius: 8px;
   align-items: center;
   justify-content: center;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      background-color: ${({ theme }) => theme.colors.disabled};
+    `}
 `;
