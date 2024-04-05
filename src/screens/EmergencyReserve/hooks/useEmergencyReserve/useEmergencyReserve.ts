@@ -1,11 +1,15 @@
 import { useMemo, useState } from 'react';
 import { PercentageSizes } from '../../../../components/BoxSelectPercentage/constants';
-import { Profissions } from '../../../../components/Modal/ModalSelectProfission/constants';
 import {
   IFormEmergencyReserveValues,
   useEmergencyReserveForm,
 } from '../useEmergencyReserveForm';
 import { formatOnlyNumbersCurrency } from '../../../../resources/utils/formatOnlyNumbersCurrency';
+import {
+  Profissions,
+  profissionEmergencyReserveMonthlyTime,
+} from './constants';
+import { IEmergenyReserveData } from './types';
 
 export const useEmergencyReserve = () => {
   const { control, errors, isValid, handleSubmit } = useEmergencyReserveForm();
@@ -15,6 +19,19 @@ export const useEmergencyReserve = () => {
   const [profissionSelected, setProfissionSelected] = useState<Profissions>(
     Profissions.UNINFORMED,
   );
+  const [emergencyReserveData, setEmergencyReserveData] =
+    useState<IEmergenyReserveData | null>(null);
+
+  const [showModalEmergencyReserve, setShowModalEmergencyReserve] =
+    useState<boolean>(false);
+
+  const openModalEmergencyReserve = () => {
+    setShowModalEmergencyReserve(true);
+  };
+
+  const closeModalEmergencyReserve = () => {
+    setShowModalEmergencyReserve(false);
+  };
 
   const disabledButton = useMemo(() => {
     if (!isValid || profissionSelected === Profissions.UNINFORMED) return true;
@@ -25,8 +42,20 @@ export const useEmergencyReserve = () => {
   const submitSimpleInsterestForm = (values: IFormEmergencyReserveValues) => {
     const fixedCost = formatOnlyNumbersCurrency(values.fixedCost);
     const monthlySalary = formatOnlyNumbersCurrency(values.monthlySalary);
-    console.log(fixedCost);
-    console.log(monthlySalary);
+    const profissionMonthlyTime =
+      profissionEmergencyReserveMonthlyTime[profissionSelected];
+
+    const saveMonthly = (percentageSize / 100) * monthlySalary;
+    const reserveEmergencyValue = fixedCost * profissionMonthlyTime;
+    const timeFinishInMonth = reserveEmergencyValue / saveMonthly;
+
+    setEmergencyReserveData({
+      reserveEmergencyValue,
+      saveMonthly,
+      timeFinishInMonth,
+      percentageSave: percentageSize,
+    });
+    openModalEmergencyReserve();
   };
 
   return {
@@ -38,6 +67,9 @@ export const useEmergencyReserve = () => {
     profissionSelected,
     setProfissionSelected,
     submitSimpleInsterestForm,
+    closeModalEmergencyReserve,
     disabledButton,
+    emergencyReserveData,
+    showModalEmergencyReserve,
   };
 };

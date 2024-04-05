@@ -3,5 +3,5 @@ export const enum PercentageSizes {
   MEDIUM = 10,
   LARGE = 15,
   EXTRA_LARGUE = 20,
-  SUPER_LARGUE = 25,
+  SUPER_LARGUE = 30,
 }

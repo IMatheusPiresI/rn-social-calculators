@@ -34,7 +34,7 @@ export const BoxSelectPercentage = ({
         <ButtonSelectAnimated
           boxActiveColor="primary"
           boxInativeColor="transparent"
-          label="5%"
+          label={`${PercentageSizes.SMALL}%`}
           textActiveColor="textLight"
           textInativeColor="primary"
           onPress={() => handleSelectPercentageSize(PercentageSizes.SMALL)}
@@ -43,7 +43,7 @@ export const BoxSelectPercentage = ({
         <ButtonSelectAnimated
           boxActiveColor="primary"
           boxInativeColor="transparent"
-          label="10%"
+          label={`${PercentageSizes.MEDIUM}%`}
           textActiveColor="textLight"
           borderHorizontal
           textInativeColor="primary"
@@ -53,7 +53,7 @@ export const BoxSelectPercentage = ({
         <ButtonSelectAnimated
           boxActiveColor="primary"
           boxInativeColor="transparent"
-          label="15%"
+          label={`${PercentageSizes.LARGE}%`}
           textActiveColor="textLight"
           textInativeColor="primary"
           onPress={() => handleSelectPercentageSize(PercentageSizes.LARGE)}
@@ -62,7 +62,7 @@ export const BoxSelectPercentage = ({
         <ButtonSelectAnimated
           boxActiveColor="primary"
           boxInativeColor="transparent"
-          label="20%"
+          label={`${PercentageSizes.EXTRA_LARGUE}%`}
           textActiveColor="textLight"
           textInativeColor="primary"
           borderHorizontal
@@ -74,7 +74,7 @@ export const BoxSelectPercentage = ({
         <ButtonSelectAnimated
           boxActiveColor="primary"
           boxInativeColor="transparent"
-          label="25%"
+          label={`${PercentageSizes.SUPER_LARGUE}%`}
           textActiveColor="textLight"
           textInativeColor="primary"
           onPress={() =>

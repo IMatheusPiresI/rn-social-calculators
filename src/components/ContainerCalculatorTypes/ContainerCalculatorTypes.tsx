@@ -38,7 +38,7 @@ export const ContainerCalculatorTypes: React.FC = () => {
         </Box>
         <Box flexDirection="row" gap={20}>
           <CardCalculatorType
-            title={`Aluguel\nX\nFinanciar`}
+            title={`Poupança\nx\nSelic`}
             image={CalculatorHouseIMG}
           />
           <CardCalculatorType

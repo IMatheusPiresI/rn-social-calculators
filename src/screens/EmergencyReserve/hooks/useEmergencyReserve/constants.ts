@@ -1,3 +1,5 @@
+import { IProfissionMock } from './types';
+
 export const enum Profissions {
   CLT = 'CLT',
   PUBLIC_AGENT = 'PUBLIC_AGENT',
@@ -5,14 +7,24 @@ export const enum Profissions {
   UNINFORMED = 'UNINFORMED',
 }
 
-export const profissions = {
+export const profissionEmergencyReserveMonthlyTime: Record<
+  Profissions,
+  number
+> = {
+  UNINFORMED: 0,
+  PUBLIC_AGENT: 3,
+  CLT: 6,
+  SELF_EMPLOYED: 12,
+};
+
+export const profissions: Record<Profissions, string> = {
   UNINFORMED: 'Não Informado',
   CLT: 'CLT',
   PUBLIC_AGENT: 'Funcionário Público',
   SELF_EMPLOYED: 'MEI/Autônomo/Empreendedor',
 };
 
-export const profissionsMock = [
+export const profissionsMock: IProfissionMock[] = [
   {
     index: 0,
     profission: Profissions.CLT,

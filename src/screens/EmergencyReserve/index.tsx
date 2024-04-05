@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Frame } from '../../components/UI/Frame';
 import { Box } from '../../components/UI/Box';
 import { MaskTextInputForm } from '../../components/Form/MaskTextInputForm';
@@ -9,6 +9,7 @@ import { Typograph } from '../../components/UI/Typograph';
 import { BoxSelectPercentage } from '../../components/BoxSelectPercentage/ index';
 import { useEmergencyReserve } from './hooks/useEmergencyReserve';
 import { ButtonSelectProfission } from '../../components/ButtonSelectProfission';
+import { ModalEmergencyReserve } from '../../components/Modal/ModalEmergencyReserve';
 
 const EmergencyReserve = () => {
   const {
@@ -21,6 +22,9 @@ const EmergencyReserve = () => {
     setProfissionSelected,
     submitSimpleInsterestForm,
     disabledButton,
+    closeModalEmergencyReserve,
+    emergencyReserveData,
+    showModalEmergencyReserve,
   } = useEmergencyReserve();
 
   return (
@@ -74,6 +78,11 @@ const EmergencyReserve = () => {
           disabled={disabledButton}
         />
       </Box>
+      <ModalEmergencyReserve
+        isVisible={showModalEmergencyReserve}
+        onClose={closeModalEmergencyReserve}
+        emergencyReserveData={emergencyReserveData}
+      />
     </Frame>
   );
 };

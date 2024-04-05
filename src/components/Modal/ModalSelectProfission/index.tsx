@@ -7,7 +7,10 @@ import { XCircle } from 'phosphor-react-native';
 import { colors } from '../../../resources/theme/colors';
 import { Typograph } from '../../UI/Typograph';
 import { IModalSelectProfissionProps } from './types';
-import { profissions, profissionsMock } from './constants';
+import {
+  profissions,
+  profissionsMock,
+} from '../../../screens/EmergencyReserve/hooks/useEmergencyReserve/constants';
 
 export const ModalSelectProfission = ({
   isVisible,
@@ -40,6 +43,7 @@ export const ModalSelectProfission = ({
           {profissionsMock.map((profission) => (
             <S.ButtonOpacity
               onPress={() => onSelectProfission(profission.profission)}
+              key={profission.index}
             >
               <Box paddingVertical={6}>
                 <Typograph fontSize={18} font="INTER_BOLD" color="textLight">
