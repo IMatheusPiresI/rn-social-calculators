@@ -12,6 +12,7 @@ export const TableInterestEvolution: React.FC<ITableInterestEvolutionProps> = ({
     <Box>
       <S.TableList
         data={dataTable}
+        bounces={false}
         ListHeaderComponent={() => <HeaderTable />}
         renderItem={({ item, index }) => (
           <CardItemTable index={index} item={item} key={index} />

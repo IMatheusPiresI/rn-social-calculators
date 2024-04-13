@@ -7,7 +7,11 @@ import { IButtonProps } from './types';
 export const Button: React.FC<IButtonProps> = ({ title, ...rest }) => {
   return (
     <S.Button {...rest}>
-      <Typograph color="textLight" fontSize={16} font="INTER_BOLD">
+      <Typograph
+        color={rest.variant === 'secondary' ? 'primary' : 'textLight'}
+        fontSize={16}
+        font="INTER_BOLD"
+      >
         {title}
       </Typograph>
     </S.Button>

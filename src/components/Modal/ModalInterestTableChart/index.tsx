@@ -12,7 +12,7 @@ import { useNavigation } from '@react-navigation/native';
 
 export const ModalInterestTableChart: React.FC<
   IModalInterestTableChartProps
-> = ({ dataChart, dataTable, isVisible, onClose }) => {
+> = ({ dataChart, dataTable, isVisible, label, onClose }) => {
   const { top, bottom } = useSafeAreaInsets();
 
   return (
@@ -29,7 +29,7 @@ export const ModalInterestTableChart: React.FC<
           alignItems="center"
         >
           <Typograph fontSize={22} color="textLight" font="INTER_BOLD">
-            Rendimento
+            {label ?? 'Rendimento'}
           </Typograph>
           <S.ButtonOpacity onPress={onClose}>
             <XCircle color={colors.iconLight} size={56} weight="thin" />

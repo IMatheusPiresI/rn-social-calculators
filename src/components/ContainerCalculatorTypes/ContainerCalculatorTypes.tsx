@@ -21,6 +21,10 @@ export const ContainerCalculatorTypes: React.FC = () => {
     navigation.navigate('EmergencyReserve');
   };
 
+  const handleNavigateToSelicXSavingAccount = () => {
+    navigation.navigate('SelicXSavingAccount');
+  };
+
   return (
     <Box alignItems="center" justifyContent="center" width="100%">
       <Box width="100%" gap={20}>
@@ -40,6 +44,7 @@ export const ContainerCalculatorTypes: React.FC = () => {
           <CardCalculatorType
             title={`Poupança\nx\nSelic`}
             image={CalculatorHouseIMG}
+            onPress={handleNavigateToSelicXSavingAccount}
           />
           <CardCalculatorType
             title={`Reserva\nde\nEmergência`}

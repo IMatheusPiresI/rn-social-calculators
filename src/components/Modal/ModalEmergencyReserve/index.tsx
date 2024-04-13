@@ -37,14 +37,14 @@ export const ModalEmergencyReserve = ({
           </S.ButtonOpacity>
         </Box>
         {emergencyReserveData && (
-          <Box flex={1} marginTop={32}>
+          <Box flex={1} marginTop={20}>
             <Box
               borderWidth={1}
               borderRadius={12}
               borderColor={colors.borderLight}
-              gap={20}
+              gap={12}
               paddingHorizontal={16}
-              paddingVertical={16}
+              paddingVertical={12}
             >
               <Typograph fontSize={16} color="textLight" font="INTER_BOLD">
                 Sua reserva de emergência deve ser de:
@@ -57,10 +57,10 @@ export const ModalEmergencyReserve = ({
               borderWidth={1}
               borderRadius={12}
               borderColor={colors.borderLight}
-              gap={20}
+              gap={12}
               paddingHorizontal={16}
-              paddingVertical={16}
-              marginTop={32}
+              paddingVertical={12}
+              marginTop={20}
             >
               <Typograph fontSize={16} color="textLight" font="INTER_BOLD">
                 Guardando{' '}
@@ -77,10 +77,10 @@ export const ModalEmergencyReserve = ({
               borderWidth={1}
               borderRadius={12}
               borderColor={colors.borderLight}
-              gap={20}
+              gap={12}
               paddingHorizontal={16}
-              paddingVertical={16}
-              marginTop={32}
+              paddingVertical={12}
+              marginTop={20}
             >
               <Typograph fontSize={16} color="textLight" font="INTER_BOLD">
                 Tempo para completar sua reserva:

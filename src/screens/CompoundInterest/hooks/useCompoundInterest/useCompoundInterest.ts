@@ -3,14 +3,12 @@ import { IDataChart } from '../../../../components/ChartInterestEvolution/types'
 import { IDataTable } from '../../../../components/TableInterestEvolution/types';
 import { formatOnlyNumbersCurrency } from '../../../../resources/utils/formatOnlyNumbersCurrency';
 import { formatPeriodNumberValue } from '../../../../resources/utils/formatPeriodNumberValue';
-import { getInterestRateMonthly } from '../../../../resources/utils/getInterestRateMonthly';
-import { getPeriodMonthly } from '../../../../resources/utils/getPeriodMonthly';
 import {
   IFormCompoundInterestValues,
   useCompoundInterestForm,
 } from '../useCompoundInterestForm';
-import { IGetCompoundInterest } from './types';
 import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
+import { getCompoundInterest } from '../../../../resources/utils/getCompoundInsterest';
 
 export const useCompoundInterest = () => {
   const { control, handleSubmit, errors } = useCompoundInterestForm();
@@ -29,54 +27,6 @@ export const useCompoundInterest = () => {
 
   const handleCloseModalInterest = () => {
     setShowModalInterest(false);
-  };
-
-  const getCompoundInterest = ({
-    initialValue,
-    monthlyValue,
-    timePeriod,
-    timePeriodValue,
-    interestPeriodRate,
-    interestPeriodValue,
-  }: IGetCompoundInterest) => {
-    const timePeriodMonthly = getPeriodMonthly(timePeriod, timePeriodValue);
-    const interestRateMonthly = getInterestRateMonthly(
-      interestPeriodRate,
-      interestPeriodValue,
-    );
-
-    const monthsInterest = [];
-
-    let valueAcc = initialValue;
-    let oldInterest = 0;
-    let total = 0;
-    for (let month = 0; month <= timePeriodMonthly; month++) {
-      let monthValyes = month === 0 ? 0 : monthlyValue;
-      valueAcc += monthValyes + oldInterest;
-      const interestMonth =
-        valueAcc * (1 + interestRateMonthly / 100) - valueAcc;
-
-      const monthInterest = {
-        index: month,
-        monthValue: valueAcc,
-        monthInterest: oldInterest,
-        totalInterest:
-          valueAcc - initialValue - (month === 0 ? 0 : monthlyValue * month),
-      };
-      oldInterest = interestMonth;
-
-      monthsInterest.push(monthInterest);
-      if (month === timePeriodMonthly) {
-        total = valueAcc;
-      }
-    }
-
-    return {
-      total,
-      initialValue,
-      monthlyValue,
-      monthsInterest: [...monthsInterest],
-    };
   };
 
   const submitCompoundInsterestForm = (values: IFormCompoundInterestValues) => {

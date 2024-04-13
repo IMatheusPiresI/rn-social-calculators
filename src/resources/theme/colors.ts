@@ -14,6 +14,7 @@ export const colors = {
   transparent: palette.transparent,
   shadowBlue: palette.transparent_blue_200,
   primary: palette.blue_200,
+  secondary: palette.white,
   textDark: palette.black,
   textLight: palette.white,
   placeholder: palette.transparent_blue_200,

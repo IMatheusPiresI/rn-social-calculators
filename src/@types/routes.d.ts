@@ -5,6 +5,7 @@ export declare global {
       SimpleInterest: undefined;
       CompoundInterest: undefined;
       EmergencyReserve: undefined;
+      SelicXSavingAccount: undefined;
     }
   }
 }

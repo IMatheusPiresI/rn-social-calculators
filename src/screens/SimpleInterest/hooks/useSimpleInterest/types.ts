@@ -1,4 +1,4 @@
-import { IPeriodType } from '../../../../components/Form/PeriodValueInput/types';
+import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
 
 export interface IResponseSimpleInterest {
   total: number;
@@ -11,6 +11,6 @@ export interface IGetMonthlySimpleInterestRateParams {
   initialValue: number;
   timePeriodValue: number;
   interestPeriodValue: number;
-  periodInterestRate: IPeriodType;
-  timePeriod: IPeriodType;
+  periodInterestRate: PeriodType;
+  timePeriod: PeriodType;
 }

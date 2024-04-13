@@ -5,5 +5,6 @@ export type IModalInterestTableChartProps = {
   dataChart: IDataChart[];
   dataTable: IDataTable[];
   isVisible: boolean;
+  label?: string;
   onClose: () => void;
 };

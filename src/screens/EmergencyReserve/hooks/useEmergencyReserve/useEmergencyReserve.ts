@@ -52,7 +52,7 @@ export const useEmergencyReserve = () => {
     setEmergencyReserveData({
       reserveEmergencyValue,
       saveMonthly,
-      timeFinishInMonth,
+      timeFinishInMonth: Number(timeFinishInMonth.toFixed(0)),
       percentageSave: percentageSize,
     });
     openModalEmergencyReserve();
