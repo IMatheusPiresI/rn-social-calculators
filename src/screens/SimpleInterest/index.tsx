@@ -19,6 +19,7 @@ const SimpleInterest = () => {
     handleSubmit,
     periodInterestRate,
     periodTime,
+    isValid,
     setPeriodInterestRate,
     setPeriodTime,
     showModalInterest,
@@ -77,6 +78,7 @@ const SimpleInterest = () => {
         <Button
           onPress={handleSubmit(submitSimpleInsterestForm)}
           title="Calcular"
+          disabled={!isValid}
         />
       </Box>
 

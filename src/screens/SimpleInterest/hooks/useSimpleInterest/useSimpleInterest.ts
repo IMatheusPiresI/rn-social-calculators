@@ -16,7 +16,7 @@ import {
 import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
 
 export const useSimpleInterest = () => {
-  const { control, errors, handleSubmit } = useSimpleInterestForm();
+  const { control, errors, isValid, handleSubmit } = useSimpleInterestForm();
 
   const [showModalInterest, setShowModalInterest] = useState<boolean>(false);
   const [periodInterestRate, setPeriodInterestRate] = useState<PeriodType>(
@@ -124,6 +124,7 @@ export const useSimpleInterest = () => {
     handleSubmit,
     submitSimpleInsterestForm,
     showModalInterest,
+    isValid,
     dataForm,
     dataTable,
     handleCloseModalInterest,

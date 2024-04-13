@@ -22,6 +22,7 @@ const CompoundInterest = () => {
     setPeriodInterestRate,
     setPeriodTime,
     showModalInterest,
+    isValid,
     submitCompoundInsterestForm,
   } = useCompoundInterest();
 
@@ -92,6 +93,7 @@ const CompoundInterest = () => {
         <Button
           onPress={handleSubmit(submitCompoundInsterestForm)}
           title="Calcular"
+          disabled={!isValid}
         />
       </Box>
 

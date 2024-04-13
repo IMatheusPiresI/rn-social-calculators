@@ -60,6 +60,7 @@ const SelicXSavingAccount = () => {
             error={errors.monthValue}
             monthlyLabel="Mes(es)"
             label="Período"
+            keyboardType="numeric"
             placeholder="0"
             onSelectPeriod={setPeriod}
             typeSelected={period}

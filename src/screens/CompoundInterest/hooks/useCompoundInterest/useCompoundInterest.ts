@@ -11,7 +11,7 @@ import { PeriodType } from '../../../../components/Form/PeriodValueInput/constan
 import { getCompoundInterest } from '../../../../resources/utils/getCompoundInsterest';
 
 export const useCompoundInterest = () => {
-  const { control, handleSubmit, errors } = useCompoundInterestForm();
+  const { control, handleSubmit, errors, isValid } = useCompoundInterestForm();
 
   const [showModalInterest, setShowModalInterest] = useState<boolean>(false);
   const [periodInterestRate, setPeriodInterestRate] = useState<PeriodType>(
@@ -71,6 +71,7 @@ export const useCompoundInterest = () => {
     periodTime,
     setPeriodTime,
     showModalInterest,
+    isValid,
     dataChart,
     dataTable,
     handleCloseModalInterest,
