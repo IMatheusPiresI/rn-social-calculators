@@ -32,9 +32,11 @@ export const ModalSelectProfission = ({
           justifyContent="space-between"
           alignItems="center"
         >
-          <Typograph fontSize={22} color="textLight" font="INTER_BOLD" flex>
-            Selecione sua profissão
-          </Typograph>
+          <Box flex={1}>
+            <Typograph fontSize={22} color="textLight" font="INTER_BOLD">
+              Selecione sua profissão
+            </Typograph>
+          </Box>
           <S.ButtonOpacity onPress={onClose}>
             <XCircle color={colors.iconLight} size={56} weight="thin" />
           </S.ButtonOpacity>

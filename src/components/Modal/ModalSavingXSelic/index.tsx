@@ -65,9 +65,11 @@ export const ModalSavingXSelic = ({
           justifyContent="space-between"
           alignItems="center"
         >
-          <Typograph fontSize={22} color="textLight" font="INTER_BOLD" flex>
-            Poupança X Selic
-          </Typograph>
+          <Box flex={1}>
+            <Typograph fontSize={22} color="textLight" font="INTER_BOLD">
+              Poupança X Selic
+            </Typograph>
+          </Box>
           <S.ButtonOpacity onPress={onClose}>
             <XCircle color={colors.iconLight} size={56} weight="thin" />
           </S.ButtonOpacity>

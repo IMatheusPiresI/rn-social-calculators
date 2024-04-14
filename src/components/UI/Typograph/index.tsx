@@ -9,7 +9,6 @@ export const Typograph: React.FC<ITypographProps> = ({
   color,
   font = 'INTER_REGULAR',
   fontSize = 12,
-  flex,
   alignment,
   lineHeight,
   ...rest
@@ -26,7 +25,6 @@ export const Typograph: React.FC<ITypographProps> = ({
       color={getColor()}
       font={font}
       fontSize={fontSize}
-      flex={flex}
       alignment={alignment}
       lineHeight={lineHeight}
       {...rest}

@@ -105,6 +105,7 @@ export const useSelicXSavingAccount = () => {
     };
 
     setDataSavingXSelic(data);
+
     openModalSavingXSelic();
   };
 

@@ -5,6 +5,7 @@ import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnabled
 import com.facebook.react.defaults.DefaultReactActivityDelegate
+import org.devio.rn.splashscreen.SplashScreen; // here
 
 class MainActivity : ReactActivity() {
 
@@ -13,7 +14,8 @@ class MainActivity : ReactActivity() {
    * rendering of the component.
    */
   override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(null)
+    SplashScreen.show(this);  // here
+    super.onCreate(savedInstanceState)
   }
 
   override fun getMainComponentName(): String = "SocialCalculator"

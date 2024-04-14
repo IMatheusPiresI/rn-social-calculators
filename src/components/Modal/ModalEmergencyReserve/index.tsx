@@ -29,9 +29,11 @@ export const ModalEmergencyReserve = ({
           justifyContent="space-between"
           alignItems="center"
         >
-          <Typograph fontSize={22} color="textLight" font="INTER_BOLD" flex>
-            Reserva de Emergência
-          </Typograph>
+          <Box flex={1}>
+            <Typograph fontSize={22} color="textLight" font="INTER_BOLD">
+              Reserva de Emergência
+            </Typograph>
+          </Box>
           <S.ButtonOpacity onPress={onClose}>
             <XCircle color={colors.iconLight} size={56} weight="thin" />
           </S.ButtonOpacity>

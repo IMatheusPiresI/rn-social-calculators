@@ -8,7 +8,6 @@ export type ITypographProps = {
   fontSize?: number;
   font?: IFonts;
   color?: IColors;
-  flex?: boolean;
   alignment?: 'justify' | 'center';
   lineHeight?: number;
 } & TextProps;
@@ -17,7 +16,6 @@ export type ITypographStyleProps = {
   font: IFonts;
   fontSize: number;
   color: string;
-  flex?: boolean;
   alignment?: string;
   lineHeight?: number;
 };

@@ -7,12 +7,6 @@ export const TypographText = styled.Text<ITypographStyleProps>`
   color: ${({ color }) => color};
   font-family: ${({ font }) => fonts[font]};
 
-  ${({ flex }) =>
-    flex &&
-    css`
-      flex: 1;
-    `}
-
   ${({ alignment }) =>
     alignment &&
     css`
