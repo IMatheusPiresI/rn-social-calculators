@@ -41,11 +41,11 @@ export const ButtonSelectAnimated: React.FC<IButtonTypeRenderInterestProps> = ({
 
   const changeAnimationOnActive = useCallback(() => {
     if (isActive) {
-      animationSelect.value = withTiming(1, { duration: 400 });
+      animationSelect.value = withTiming(1, { duration: 200 });
       return;
     }
 
-    animationSelect.value = withTiming(0, { duration: 400 });
+    animationSelect.value = withTiming(0, { duration: 200 });
   }, [isActive]);
 
   useEffect(() => {

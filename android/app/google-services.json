@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "102872490568",
+    "project_id": "socialcalcu",
+    "storage_bucket": "socialcalcu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102872490568:android:049c25c84303644d306e7d",
+        "android_client_info": {
+          "package_name": "com.socialcalculator.matheuspires"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrxio0tP46k5oTYXcVl4F7koigprVNWIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

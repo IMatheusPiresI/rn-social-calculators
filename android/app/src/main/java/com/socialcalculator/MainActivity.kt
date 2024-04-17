@@ -1,4 +1,4 @@
-package com.socialcalculator
+package com.socialcalculator.matheuspires
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity

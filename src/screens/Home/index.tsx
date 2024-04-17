@@ -2,7 +2,6 @@ import React from 'react';
 import { Frame } from '../../components/UI/Frame';
 import { Typograph } from '../../components/UI/Typograph';
 import { Box } from '../../components/UI/Box';
-import theme from '../../resources/theme';
 import { ContainerCalculatorTypes } from '../../components/ContainerCalculatorTypes/ContainerCalculatorTypes';
 
 const Home: React.FC = () => {

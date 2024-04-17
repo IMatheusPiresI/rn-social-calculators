@@ -8,6 +8,8 @@ import { getCompoundInterest } from '../../../../resources/utils/getCompoundInst
 import { ISavingXSelicData } from './types';
 import { IDataTable } from '../../../../components/TableInterestEvolution/types';
 import { IDataChart } from '../../../../components/ChartInterestEvolution/types';
+import { getRemoteValue } from '../../../../services/firebase/remoteConfig';
+import { RemoteConfigKeys } from '../../../../services/firebase/remoteConfig/constants';
 
 export const useSelicXSavingAccount = () => {
   const [period, setPeriod] = useState<PeriodType>(PeriodType.YEARLY);
@@ -17,8 +19,12 @@ export const useSelicXSavingAccount = () => {
     useState<boolean>(false);
   const { control, handleSubmit, errors, isValid } =
     useSelicXSavingAccountForm();
-  const SELIC_PERCENTAGE_VALUE: number = 12.75;
-  const SAVING_ACCOUNT_PERCENTAGE_VALUE: number = 6.167;
+  const SELIC_PERCENTAGE_VALUE: number = getRemoteValue(
+    RemoteConfigKeys.SELIC_PERCENTAGE,
+  );
+  const SAVING_ACCOUNT_PERCENTAGE_VALUE: number = getRemoteValue(
+    RemoteConfigKeys.SAVING_PERCENTAGE,
+  );
 
   const openModalSavingXSelic = () => {
     setShowModalSavingXSelic(true);

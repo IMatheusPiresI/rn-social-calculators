@@ -1,4 +1,4 @@
-package com.socialcalculator
+package com.socialcalculator.matheuspires
 
 import android.app.Application
 import com.facebook.react.PackageList
