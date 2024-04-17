@@ -8,8 +8,10 @@ import { PeriodValueInput } from '../../components/Form/PeriodValueInput';
 import { Button } from '../../components/UI/Button';
 import { Typograph } from '../../components/UI/Typograph';
 import { ModalInterestTableChart } from '../../components/Modal/ModalInterestTableChart';
+import { useScreenView } from '../../analytics/logs/hooks/useScreenView';
 
 const SimpleInterest = () => {
+  useScreenView('SimpleInterest');
   const {
     control,
     dataForm,

@@ -10,8 +10,10 @@ import { BoxSelectPercentage } from '../../components/BoxSelectPercentage/ index
 import { useEmergencyReserve } from './hooks/useEmergencyReserve';
 import { ButtonSelectProfission } from '../../components/ButtonSelectProfission';
 import { ModalEmergencyReserve } from '../../components/Modal/ModalEmergencyReserve';
+import { useScreenView } from '../../analytics/logs/hooks/useScreenView';
 
 const EmergencyReserve = () => {
+  useScreenView('EmergencyReserve');
   const {
     control,
     errors,

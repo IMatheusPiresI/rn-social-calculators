@@ -8,8 +8,10 @@ import { Button } from '../../components/UI/Button';
 import { Typograph } from '../../components/UI/Typograph';
 import { ModalInterestTableChart } from '../../components/Modal/ModalInterestTableChart';
 import { useCompoundInterest } from './hooks/useCompoundInterest';
+import { useScreenView } from '../../analytics/logs/hooks/useScreenView';
 
 const CompoundInterest = () => {
+  useScreenView('CompoundInterest');
   const {
     control,
     dataChart,
