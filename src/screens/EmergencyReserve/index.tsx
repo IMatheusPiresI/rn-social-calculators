@@ -1,16 +1,16 @@
 import React from 'react';
-import { Frame } from '../../components/UI/Frame';
-import { Box } from '../../components/UI/Box';
-import { MaskTextInputForm } from '../../components/Form/MaskTextInputForm';
+import { Frame } from '@components/UI/Frame';
+import { Box } from '@components/UI/Box';
+import { MaskTextInputForm } from '@components/Form/MaskTextInputForm';
 import { Masks } from 'react-native-mask-input';
+import { Button } from '@components/UI/Button';
+import { Typograph } from '@components/UI/Typograph';
+import { BoxSelectPercentage } from '@components/BoxSelectPercentage/ index';
+import { ButtonSelectProfission } from '@components/ButtonSelectProfission';
+import { ModalEmergencyReserve } from '@components/Modal/ModalEmergencyReserve';
+import { useScreenView } from '@analytics/index';
 
-import { Button } from '../../components/UI/Button';
-import { Typograph } from '../../components/UI/Typograph';
-import { BoxSelectPercentage } from '../../components/BoxSelectPercentage/ index';
 import { useEmergencyReserve } from './hooks/useEmergencyReserve';
-import { ButtonSelectProfission } from '../../components/ButtonSelectProfission';
-import { ModalEmergencyReserve } from '../../components/Modal/ModalEmergencyReserve';
-import { useScreenView } from '../../analytics';
 
 const EmergencyReserve = () => {
   useScreenView('EmergencyReserve');

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components/native';
-import { fonts } from '../../../resources/theme/fonts';
+import { fonts } from '@resources/theme/fonts';
+
 import { ITypographStyleProps } from './types';
 
 export const TypographText = styled.Text<ITypographStyleProps>`

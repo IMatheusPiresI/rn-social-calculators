@@ -17,13 +17,14 @@ module.exports = {
     'autofix',
     'react-hooks',
     'import',
+    'jest',
   ],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-uses-react': 1,
     'object-curly-spacing': ['warn', 'always'],
     'arrow-body-style': ['error', 'as-needed'],
-    'react/self-closing-comp': ['error', {component: true, html: true}],
+    'react/self-closing-comp': ['error', { component: true, html: true }],
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': [
       'warn',
@@ -40,5 +41,6 @@ module.exports = {
     'react/prop-types': 'off',
     'import/prefer-default-export': 0,
     'import/no-named-as-default': 0,
+    'no-unused-vars': 0,
   },
 };

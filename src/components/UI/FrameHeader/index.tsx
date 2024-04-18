@@ -1,11 +1,14 @@
-import { colors } from '../../../resources/theme/colors';
+import React from 'react';
+import { colors } from '@resources/theme/colors';
+import { ArrowCircleLeft } from 'phosphor-react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import { Box } from '../Box';
 import { Typograph } from '../Typograph';
 import LogoIMG from '../../../assets/images/logo.jpg';
+
 import * as S from './styles';
 import { IFrameHeaderProps } from './types';
-import { ArrowCircleLeft } from 'phosphor-react-native';
-import { useNavigation } from '@react-navigation/native';
 
 export const FrameHeader: React.FC<IFrameHeaderProps> = ({
   title,

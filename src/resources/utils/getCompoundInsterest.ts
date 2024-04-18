@@ -1,4 +1,5 @@
-import { PeriodType } from '../../components/Form/PeriodValueInput/constants';
+import { PeriodType } from '@components/Form/PeriodValueInput/constants';
+
 import { getInterestRateMonthly } from './getInterestRateMonthly';
 import { getPeriodMonthly } from './getPeriodMonthly';
 
@@ -31,7 +32,7 @@ export const getCompoundInterest = ({
   let oldInterest = 0;
   let total = 0;
   for (let month = 0; month <= timePeriodMonthly; month++) {
-    let monthValyes = month === 0 ? 0 : monthlyValue;
+    const monthValyes = month === 0 ? 0 : monthlyValue;
     valueAcc += monthValyes + oldInterest;
     const interestMonth = valueAcc * (1 + interestRateMonthly / 100) - valueAcc;
 

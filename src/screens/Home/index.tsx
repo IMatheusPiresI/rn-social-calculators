@@ -1,9 +1,9 @@
 import React from 'react';
-import { Frame } from '../../components/UI/Frame';
-import { Typograph } from '../../components/UI/Typograph';
-import { Box } from '../../components/UI/Box';
-import { ContainerCalculatorTypes } from '../../components/ContainerCalculatorTypes/ContainerCalculatorTypes';
-import { useScreenView } from '../../analytics';
+import { Frame } from '@components/UI/Frame';
+import { Typograph } from '@components/UI/Typograph';
+import { Box } from '@components/UI/Box';
+import { ContainerCalculatorTypes } from '@components/ContainerCalculatorTypes/ContainerCalculatorTypes';
+import { useScreenView } from '@analytics/index';
 
 const Home: React.FC = () => {
   useScreenView('Home');

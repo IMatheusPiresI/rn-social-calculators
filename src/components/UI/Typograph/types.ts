@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { IFonts } from '../../../resources/theme/fonts';
-import { IColors } from '../../../resources/theme/colors';
+import { IFonts } from '@resources/theme/fonts';
+import { IColors } from '@resources/theme/colors';
 import { TextProps } from 'react-native';
 
 export type ITypographProps = {

@@ -1,10 +1,12 @@
-import { CardCalculatorType } from '../CardCalculatorType';
-import { Box } from '../UI/Box';
-import CalculatorSimpleIMG from '../../assets/images/calculator-simple.webp';
-import CalculatorCompostIMG from '../../assets/images/calculator-compost.webp';
-import CalculatorHouseIMG from '../../assets/images/calculator-house.jpg';
-import CalculatorReserveIMG from '../../assets/images/calculator-reserve.webp';
+import React from 'react';
+import { Box } from '@components/UI/Box';
+import CalculatorSimpleIMG from '@assets/images/calculator-simple.webp';
+import CalculatorCompostIMG from '@assets/images/calculator-compost.webp';
+import CalculatorHouseIMG from '@assets/images/calculator-house.jpg';
+import CalculatorReserveIMG from '@assets/images/calculator-reserve.webp';
 import { useNavigation } from '@react-navigation/native';
+
+import { CardCalculatorType } from '../CardCalculatorType';
 
 export const ContainerCalculatorTypes: React.FC = () => {
   const navigation = useNavigation();

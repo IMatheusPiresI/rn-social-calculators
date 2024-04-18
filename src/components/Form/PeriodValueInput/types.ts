@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Control, FieldError } from 'react-hook-form';
 import { MaskInputProps } from 'react-native-mask-input';
+
 import { PeriodType } from './constants';
 
 export type ITextInputFormProps = {

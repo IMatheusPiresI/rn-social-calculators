@@ -1,4 +1,4 @@
-import { IColors } from '../../../resources/theme/colors';
+import { IColors } from '@resources/theme/colors';
 
 export type IFrameProps = {
   scrollable?: boolean;

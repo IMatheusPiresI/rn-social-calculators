@@ -1,6 +1,6 @@
-import { IDataChart } from '../../../../components/ChartInterestEvolution/types';
-import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
-import { IDataTable } from '../../../../components/TableInterestEvolution/types';
+import { IDataChart } from '@components/ChartInterestEvolution/types';
+import { PeriodType } from '@components/Form/PeriodValueInput/constants';
+import { IDataTable } from '@components/TableInterestEvolution/types';
 
 export type ISavingXSelicData = {
   savingValue: number;

@@ -1,14 +1,14 @@
 import React from 'react';
-
-import * as S from './styles';
-import { Box } from '../../UI/Box';
+import { Box } from '@components/UI/Box';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { XCircle } from 'phosphor-react-native';
-import { colors } from '../../../resources/theme/colors';
-import { Typograph } from '../../UI/Typograph';
+import { colors } from '@resources/theme/colors';
+import { Typograph } from '@components/UI/Typograph';
+import { formatCurrency } from '@resources/utils/formatCurrency';
+import { useScreenView } from '@analytics/index';
+
 import { IModalEmergencyReserveProps } from './types';
-import { formatCurrency } from '../../../resources/utils/formatCurrency';
-import { useScreenView } from '../../../analytics';
+import * as S from './styles';
 
 export const ModalEmergencyReserve = ({
   isVisible,

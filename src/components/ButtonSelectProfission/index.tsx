@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-
-import * as S from './styles';
-import { Typograph } from '../UI/Typograph';
-import { IButtonSelectProfission } from './types';
-import { Box } from '../UI/Box';
-import { ModalSelectProfission } from '../Modal/ModalSelectProfission';
+import { Typograph } from '@components/UI/Typograph';
+import { Box } from '@components/UI/Box';
 import {
   Profissions,
   profissions,
-} from '../../screens/EmergencyReserve/hooks/useEmergencyReserve/constants';
+} from '@screens/EmergencyReserve/hooks/useEmergencyReserve/constants';
+
+import { ModalSelectProfission } from '../Modal/ModalSelectProfission';
+
+import { IButtonSelectProfission } from './types';
+import * as S from './styles';
 
 export const ButtonSelectProfission = ({
   profissionSelected,

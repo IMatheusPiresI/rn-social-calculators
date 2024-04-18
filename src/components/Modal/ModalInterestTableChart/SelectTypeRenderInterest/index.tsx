@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Box } from '../../../UI/Box';
-import { colors } from '../../../../resources/theme/colors';
+import { Box } from '@components/UI/Box';
+import { colors } from '@resources/theme/colors';
+import { ChartInterestEvolution } from '@components/ChartInterestEvolution';
+import { TableInterestEvolution } from '@components/TableInterestEvolution';
+import { ButtonSelectAnimated } from '@components/ButtonSelectAnimated';
+
 import { ISelectTypeRenderInterestProps, ITypeRenderInterest } from './types';
-import { ChartInterestEvolution } from '../../../ChartInterestEvolution';
-import { TableInterestEvolution } from '../../../TableInterestEvolution';
-import { ButtonSelectAnimated } from '../../../ButtonSelectAnimated';
 
 export const SelectTypeRenderInterest: React.FC<
   ISelectTypeRenderInterestProps

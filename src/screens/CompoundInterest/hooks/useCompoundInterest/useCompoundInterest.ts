@@ -1,15 +1,16 @@
 import { useState } from 'react';
-import { IDataChart } from '../../../../components/ChartInterestEvolution/types';
-import { IDataTable } from '../../../../components/TableInterestEvolution/types';
-import { formatOnlyNumbersCurrency } from '../../../../resources/utils/formatOnlyNumbersCurrency';
-import { formatPeriodNumberValue } from '../../../../resources/utils/formatPeriodNumberValue';
+import { IDataChart } from '@components/ChartInterestEvolution/types';
+import { IDataTable } from '@components/TableInterestEvolution/types';
+import { formatOnlyNumbersCurrency } from '@resources/utils/formatOnlyNumbersCurrency';
+import { formatPeriodNumberValue } from '@resources/utils/formatPeriodNumberValue';
+import { PeriodType } from '@components/Form/PeriodValueInput/constants';
+import { getCompoundInterest } from '@resources/utils/getCompoundInsterest';
+import { LOG, logEvent } from '@analytics/index';
+
 import {
   IFormCompoundInterestValues,
   useCompoundInterestForm,
 } from '../useCompoundInterestForm';
-import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
-import { getCompoundInterest } from '../../../../resources/utils/getCompoundInsterest';
-import { LOG, logEvent } from '../../../../analytics';
 
 export const useCompoundInterest = () => {
   const { control, handleSubmit, errors, isValid } = useCompoundInterestForm();
@@ -43,13 +44,13 @@ export const useCompoundInterest = () => {
       timePeriodValue: formatOnlyNumbersCurrency(values.timePeriodValue),
     });
 
-    const dataChart: IDataChart[] = result.monthsInterest.map((data) => ({
+    const resultDataChart: IDataChart[] = result.monthsInterest.map((data) => ({
       initialValue: result.initialValue,
       monthlyInterest: data.monthValue,
       months: data.index,
     }));
 
-    const dataTable: IDataTable[] = result.monthsInterest.map((data) => ({
+    const resultDataTable: IDataTable[] = result.monthsInterest.map((data) => ({
       months: data.index,
       monthlyInterest: data.monthInterest,
       totalInterest: data.totalInterest,
@@ -58,8 +59,8 @@ export const useCompoundInterest = () => {
     }));
 
     logEvent(LOG.COMPOUND_INTEREST_CALC);
-    setDataChart(dataChart);
-    setDataTable(dataTable);
+    setDataChart(resultDataChart);
+    setDataTable(resultDataTable);
     openModalInterest();
   };
 

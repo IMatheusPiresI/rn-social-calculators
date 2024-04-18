@@ -1,20 +1,22 @@
 import { useState } from 'react';
-import { IDataChart } from '../../../../components/ChartInterestEvolution/types';
-import { IDataTable } from '../../../../components/TableInterestEvolution/types';
-import { formatOnlyNumbersCurrency } from '../../../../resources/utils/formatOnlyNumbersCurrency';
-import { formatPeriodNumberValue } from '../../../../resources/utils/formatPeriodNumberValue';
-import { getInterestRateMonthly } from '../../../../resources/utils/getInterestRateMonthly';
-import { getPeriodMonthly } from '../../../../resources/utils/getPeriodMonthly';
+import { IDataChart } from '@components/ChartInterestEvolution/types';
+import { IDataTable } from '@components/TableInterestEvolution/types';
+import { formatOnlyNumbersCurrency } from '@resources/utils/formatOnlyNumbersCurrency';
+import { formatPeriodNumberValue } from '@resources/utils/formatPeriodNumberValue';
+import { getInterestRateMonthly } from '@resources/utils/getInterestRateMonthly';
+import { getPeriodMonthly } from '@resources/utils/getPeriodMonthly';
+import { PeriodType } from '@components/Form/PeriodValueInput/constants';
+import { LOG, logEvent } from '@analytics/index';
+
 import {
   IFormSimpleInterestValues,
   useSimpleInterestForm,
 } from '../useSimpleInterestForm';
+
 import {
   IGetMonthlySimpleInterestRateParams,
   IResponseSimpleInterest,
 } from './types';
-import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
-import { LOG, logEvent } from '../../../../analytics/logs/logEvent';
 
 export const useSimpleInterest = () => {
   const { control, errors, isValid, handleSubmit } = useSimpleInterestForm();
@@ -88,11 +90,11 @@ export const useSimpleInterest = () => {
         values.interestRatePeriodValue,
       ),
       timePeriodValue: formatPeriodNumberValue(values.timePeriodValue),
-      periodInterestRate: periodInterestRate,
+      periodInterestRate,
       timePeriod: periodTime,
     });
 
-    const dataChart: IDataChart[] = result.monthlyInterest.map(
+    const resultDataChart: IDataChart[] = result.monthlyInterest.map(
       (monthlyValue, monthIndex) => ({
         monthlyInterest: result.initialValue + monthlyValue,
         months: monthIndex + 1,
@@ -100,7 +102,7 @@ export const useSimpleInterest = () => {
       }),
     );
 
-    const dataTable: IDataTable[] = result.monthlyInterest.map(
+    const resultDataTable: IDataTable[] = result.monthlyInterest.map(
       (monthlyValue, monthIndex) => ({
         months: monthIndex,
         monthlyInterest: monthlyValue,
@@ -111,8 +113,8 @@ export const useSimpleInterest = () => {
     );
 
     logEvent(LOG.SIMPLE_INTEREST_CALC);
-    setDataForm(dataChart);
-    setDataTable(dataTable);
+    setDataForm(resultDataChart);
+    setDataTable(resultDataTable);
     openModalInterest();
   };
 

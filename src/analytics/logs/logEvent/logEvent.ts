@@ -1,6 +1,8 @@
 import { FirebaseAnalytics } from '../instance';
-import { LOG } from './constants';
+
 import { EventParams } from './types';
+
+import { LOG } from '.';
 
 /**
  * Dispara um evento na ferramenta de analytics.
@@ -8,6 +10,6 @@ import { EventParams } from './types';
  * @param eventParams - Os parâmetros do evento.
  */
 
-export const logEvent = (eventName: string, eventParams?: EventParams) => {
+export const logEvent = (eventName: LOG, eventParams?: EventParams) => {
   FirebaseAnalytics.logEvent(eventName, eventParams);
 };

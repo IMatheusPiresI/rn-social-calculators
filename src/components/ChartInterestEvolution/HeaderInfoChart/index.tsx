@@ -1,10 +1,11 @@
 import { runOnJS, useAnimatedReaction } from 'react-native-reanimated';
-import { colors } from '../../../resources/theme/colors';
-import { Box } from '../../UI/Box';
-import { Typograph } from '../../UI/Typograph';
-import { IHeaderInfoChartProps } from './types';
+import { colors } from '@resources/theme/colors';
+import { Box } from '@components/UI/Box';
+import { Typograph } from '@components/UI/Typograph';
 import { useState } from 'react';
-import { formatCurrency } from '../../../resources/utils/formatCurrency';
+import { formatCurrency } from '@resources/utils/formatCurrency';
+
+import { IHeaderInfoChartProps } from './types';
 
 export const HeaderInfoChart = ({
   accumulatedValue,
@@ -14,15 +15,13 @@ export const HeaderInfoChart = ({
   const [interested, setInterested] = useState<number>(0);
 
   useAnimatedReaction(
-    () => {
-      return {
-        accumulatedValue: accumulatedValue.value,
-        interestedValue: interestedValue.value,
-      };
-    },
-    ({ accumulatedValue, interestedValue }) => {
-      runOnJS(setAccumulatedValue)(accumulatedValue);
-      runOnJS(setInterested)(interestedValue);
+    () => ({
+      accValue: accumulatedValue.value,
+      inrstValue: interestedValue.value,
+    }),
+    ({ accValue, inrstValue }) => {
+      runOnJS(setAccumulatedValue)(accValue);
+      runOnJS(setInterested)(inrstValue);
     },
   );
 

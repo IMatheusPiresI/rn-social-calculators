@@ -1,17 +1,17 @@
 import React from 'react';
-
-import * as S from './styles';
-import { Box } from '../../UI/Box';
+import { Box } from '@components/UI/Box';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { XCircle } from 'phosphor-react-native';
-import { colors } from '../../../resources/theme/colors';
-import { Typograph } from '../../UI/Typograph';
-import { IModalSelectProfissionProps } from './types';
+import { colors } from '@resources/theme/colors';
+import { Typograph } from '@components/UI/Typograph';
 import {
   profissions,
   profissionsMock,
-} from '../../../screens/EmergencyReserve/hooks/useEmergencyReserve/constants';
-import { useScreenView } from '../../../analytics';
+} from '@screens/EmergencyReserve/hooks/useEmergencyReserve/constants';
+import { useScreenView } from '@analytics/index';
+
+import { IModalSelectProfissionProps } from './types';
+import * as S from './styles';
 
 export const ModalSelectProfission = ({
   isVisible,

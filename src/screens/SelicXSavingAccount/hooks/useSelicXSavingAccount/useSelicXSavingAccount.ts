@@ -1,16 +1,18 @@
 import { useState } from 'react';
-import { useSelicXSavingAccountForm } from '../useSelicXSavingAccountForm';
-import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
+import { PeriodType } from '@components/Form/PeriodValueInput/constants';
+import { formatOnlyNumbersCurrency } from '@resources/utils/formatOnlyNumbersCurrency';
+import { formatPeriodNumberValue } from '@resources/utils/formatPeriodNumberValue';
+import { getCompoundInterest } from '@resources/utils/getCompoundInsterest';
+import { IDataTable } from '@components/TableInterestEvolution/types';
+import { IDataChart } from '@components/ChartInterestEvolution/types';
+import { getRemoteValue } from '@services/firebase/remoteConfig';
+import { RemoteConfigKeys } from '@services/firebase/remoteConfig/constants';
+import { LOG, logEvent } from '@analytics/index';
+
 import { IFormSelicXSavingAccount } from '../useSelicXSavingAccountForm/types';
-import { formatOnlyNumbersCurrency } from '../../../../resources/utils/formatOnlyNumbersCurrency';
-import { formatPeriodNumberValue } from '../../../../resources/utils/formatPeriodNumberValue';
-import { getCompoundInterest } from '../../../../resources/utils/getCompoundInsterest';
+import { useSelicXSavingAccountForm } from '../useSelicXSavingAccountForm';
+
 import { ISavingXSelicData } from './types';
-import { IDataTable } from '../../../../components/TableInterestEvolution/types';
-import { IDataChart } from '../../../../components/ChartInterestEvolution/types';
-import { getRemoteValue } from '../../../../services/firebase/remoteConfig';
-import { RemoteConfigKeys } from '../../../../services/firebase/remoteConfig/constants';
-import { LOG, logEvent } from '../../../../analytics';
 
 export const useSelicXSavingAccount = () => {
   const [period, setPeriod] = useState<PeriodType>(PeriodType.YEARLY);

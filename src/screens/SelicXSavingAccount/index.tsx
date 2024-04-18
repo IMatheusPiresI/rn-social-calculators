@@ -1,14 +1,15 @@
 import React from 'react';
-import { Frame } from '../../components/UI/Frame';
-import { Box } from '../../components/UI/Box';
-import { MaskTextInputForm } from '../../components/Form/MaskTextInputForm';
+import { Frame } from '@components/UI/Frame';
+import { Box } from '@components/UI/Box';
+import { MaskTextInputForm } from '@components/Form/MaskTextInputForm';
 import { Masks } from 'react-native-mask-input';
-import { Button } from '../../components/UI/Button';
-import { Typograph } from '../../components/UI/Typograph';
+import { Button } from '@components/UI/Button';
+import { Typograph } from '@components/UI/Typograph';
+import { PeriodValueInput } from '@components/Form/PeriodValueInput';
+import { ModalSavingXSelic } from '@components/Modal/ModalSavingXSelic';
+import { useScreenView } from '@analytics/index';
+
 import { useSelicXSavingAccount } from './hooks/useSelicXSavingAccount';
-import { PeriodValueInput } from '../../components/Form/PeriodValueInput';
-import { ModalSavingXSelic } from '../../components/Modal/ModalSavingXSelic';
-import { useScreenView } from '../../analytics';
 
 const SelicXSavingAccount = () => {
   useScreenView('SelicXSavingAccount');

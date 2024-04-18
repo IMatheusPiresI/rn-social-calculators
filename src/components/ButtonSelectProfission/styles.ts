@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import { colors } from '../../resources/theme/colors';
+import { colors } from '@resources/theme/colors';
 
 export const ButtonOpacity = styled.TouchableOpacity`
   border-width: 1px;

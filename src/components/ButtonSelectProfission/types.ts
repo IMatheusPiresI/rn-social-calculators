@@ -1,4 +1,5 @@
-import { Profissions } from '../../screens/EmergencyReserve/hooks/useEmergencyReserve/constants';
+import React from 'react';
+import { Profissions } from '@screens/EmergencyReserve/hooks/useEmergencyReserve/constants';
 
 export type IButtonSelectProfission = {
   profissionSelected: Profissions;

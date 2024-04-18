@@ -1,14 +1,14 @@
 import React, { useCallback, useEffect } from 'react';
-
-import * as S from './styles';
 import {
   interpolateColor,
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
+import { colors } from '@resources/theme/colors';
+
+import * as S from './styles';
 import { IButtonTypeRenderInterestProps } from './types';
-import { colors } from '../../resources/theme/colors';
 
 export const ButtonSelectAnimated: React.FC<IButtonTypeRenderInterestProps> = ({
   isActive,
@@ -46,7 +46,7 @@ export const ButtonSelectAnimated: React.FC<IButtonTypeRenderInterestProps> = ({
     }
 
     animationSelect.value = withTiming(0, { duration: 200 });
-  }, [isActive]);
+  }, [animationSelect, isActive]);
 
   useEffect(() => {
     changeAnimationOnActive();

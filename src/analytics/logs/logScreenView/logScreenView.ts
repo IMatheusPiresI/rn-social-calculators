@@ -1,6 +1,7 @@
+import { LOG } from '@analytics/index';
+import { logEvent } from '@analytics/index';
+
 import { IScreenViewParams } from '.';
-import { LOG } from '../logEvent/constants';
-import { logEvent } from '../logEvent/logEvent';
 
 /**
  * Dispara um evento de screen_view na ferramenta de analytics.

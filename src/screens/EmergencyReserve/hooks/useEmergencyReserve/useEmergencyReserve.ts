@@ -1,16 +1,18 @@
 import { useMemo, useState } from 'react';
-import { PercentageSizes } from '../../../../components/BoxSelectPercentage/constants';
+import { formatOnlyNumbersCurrency } from '@resources/utils/formatOnlyNumbersCurrency';
+import { LOG, logEvent } from '@analytics/index';
+import { PercentageSizes } from '@components/BoxSelectPercentage/constants';
+
 import {
   IFormEmergencyReserveValues,
   useEmergencyReserveForm,
 } from '../useEmergencyReserveForm';
-import { formatOnlyNumbersCurrency } from '../../../../resources/utils/formatOnlyNumbersCurrency';
+
 import {
   Profissions,
   profissionEmergencyReserveMonthlyTime,
 } from './constants';
 import { IEmergenyReserveData } from './types';
-import { LOG, logEvent } from '../../../../analytics';
 
 export const useEmergencyReserve = () => {
   const { control, errors, isValid, handleSubmit } = useEmergencyReserveForm();

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { PercentageSizes } from './constants';
 
 export type IBoxSelectPercentage = {

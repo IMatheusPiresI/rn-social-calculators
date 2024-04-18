@@ -1,11 +1,13 @@
 import React, { PropsWithChildren } from 'react';
-import { IFrameProps } from './types';
-import * as S from './styles';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { spacing } from '../../../resources/theme/spacing';
+import { spacing } from '@resources/theme/spacing';
+
 import { Box } from '../Box';
 import { FrameHeader } from '../FrameHeader';
 import { KeyboardAvoid } from '../KeyboardAvoid';
+
+import * as S from './styles';
+import { IFrameProps } from './types';
 
 export const Frame: React.FC<PropsWithChildren<IFrameProps>> = ({
   scrollable = false,

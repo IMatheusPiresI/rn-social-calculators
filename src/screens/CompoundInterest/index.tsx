@@ -1,14 +1,15 @@
 import React from 'react';
-import { Frame } from '../../components/UI/Frame';
-import { Box } from '../../components/UI/Box';
-import { MaskTextInputForm } from '../../components/Form/MaskTextInputForm';
+import { Frame } from '@components/UI/Frame';
+import { Box } from '@components/UI/Box';
+import { MaskTextInputForm } from '@components/Form/MaskTextInputForm';
 import { Masks } from 'react-native-mask-input';
-import { PeriodValueInput } from '../../components/Form/PeriodValueInput';
-import { Button } from '../../components/UI/Button';
-import { Typograph } from '../../components/UI/Typograph';
-import { ModalInterestTableChart } from '../../components/Modal/ModalInterestTableChart';
+import { PeriodValueInput } from '@components/Form/PeriodValueInput';
+import { Button } from '@components/UI/Button';
+import { Typograph } from '@components/UI/Typograph';
+import { ModalInterestTableChart } from '@components/Modal/ModalInterestTableChart';
+import { useScreenView } from '@analytics/index';
+
 import { useCompoundInterest } from './hooks/useCompoundInterest';
-import { useScreenView } from '../../analytics';
 
 const CompoundInterest = () => {
   useScreenView('CompoundInterest');

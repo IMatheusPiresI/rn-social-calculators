@@ -1,14 +1,15 @@
 import React from 'react';
-import { useSimpleInterest } from './hooks/useSimpleInterest';
-import { Frame } from '../../components/UI/Frame';
-import { Box } from '../../components/UI/Box';
-import { MaskTextInputForm } from '../../components/Form/MaskTextInputForm';
+import { Frame } from '@components/UI/Frame';
+import { Box } from '@components/UI/Box';
+import { MaskTextInputForm } from '@components/Form/MaskTextInputForm';
 import { Masks } from 'react-native-mask-input';
-import { PeriodValueInput } from '../../components/Form/PeriodValueInput';
-import { Button } from '../../components/UI/Button';
-import { Typograph } from '../../components/UI/Typograph';
-import { ModalInterestTableChart } from '../../components/Modal/ModalInterestTableChart';
-import { useScreenView } from '../../analytics';
+import { PeriodValueInput } from '@components/Form/PeriodValueInput';
+import { Button } from '@components/UI/Button';
+import { Typograph } from '@components/UI/Typograph';
+import { ModalInterestTableChart } from '@components/Modal/ModalInterestTableChart';
+import { useScreenView } from '@analytics/index';
+
+import { useSimpleInterest } from './hooks/useSimpleInterest';
 
 const SimpleInterest = () => {
   useScreenView('SimpleInterest');

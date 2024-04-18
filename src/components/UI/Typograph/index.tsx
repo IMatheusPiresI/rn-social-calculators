@@ -1,7 +1,7 @@
 import React from 'react';
+import theme from '@resources/theme';
 
 import * as S from './styles';
-import theme from '../../../resources/theme';
 import { ITypographProps } from './types';
 
 export const Typograph: React.FC<ITypographProps> = ({

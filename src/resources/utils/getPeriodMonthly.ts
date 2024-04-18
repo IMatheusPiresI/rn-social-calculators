@@ -1,4 +1,4 @@
-import { PeriodType } from '../../components/Form/PeriodValueInput/constants';
+import { PeriodType } from '@components/Form/PeriodValueInput/constants';
 
 export const getPeriodMonthly = (timePeriod: PeriodType, period: number) => {
   if (timePeriod === PeriodType.YEARLY) {

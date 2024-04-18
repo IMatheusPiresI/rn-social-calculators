@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
+import theme from '@resources/theme';
 
 import { IBoxProps } from './types';
-import theme from '../../../resources/theme';
 
 export const Box = styled.View<IBoxProps>`
   background-color: ${({ backgroundColor }) =>

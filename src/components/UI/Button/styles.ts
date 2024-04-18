@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components/native';
+
 import { IButtonVariant } from './types';
 
 export const Button = styled.TouchableOpacity<IButtonVariant>`

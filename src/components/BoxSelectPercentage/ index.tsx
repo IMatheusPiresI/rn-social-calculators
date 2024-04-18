@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Box } from '@components/UI/Box';
+import { colors } from '@resources/theme/colors';
+import { Typograph } from '@components/UI/Typograph';
+
 import { ButtonSelectAnimated } from '../ButtonSelectAnimated';
-import { Box } from '../UI/Box';
-import { colors } from '../../resources/theme/colors';
+
 import { PercentageSizes } from './constants';
 import { IBoxSelectPercentage } from './types';
-import { Typograph } from '../UI/Typograph';
 
 export const BoxSelectPercentage = ({
   label,
   percentageSize,
   setPercentageSize,
 }: IBoxSelectPercentage) => {
-  const handleSelectPercentageSize = (percentageSize: PercentageSizes) => {
-    setPercentageSize(percentageSize);
+  const handleSelectPercentageSize = (size: PercentageSizes) => {
+    setPercentageSize(size);
   };
 
   return (

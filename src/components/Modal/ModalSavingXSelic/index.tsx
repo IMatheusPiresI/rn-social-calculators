@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-
-import * as S from './styles';
-import { Box } from '../../UI/Box';
+import { Box } from '@components/UI/Box';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { XCircle } from 'phosphor-react-native';
-import { colors } from '../../../resources/theme/colors';
-import { Typograph } from '../../UI/Typograph';
-import { IModalSavingXSelicProps } from './types';
-import { formatCurrency } from '../../../resources/utils/formatCurrency';
+import { colors } from '@resources/theme/colors';
+import { Typograph } from '@components/UI/Typograph';
+import { formatCurrency } from '@resources/utils/formatCurrency';
+import { Button } from '@components/UI/Button';
+import { useScreenView } from '@analytics/index';
+
 import { PeriodType } from '../../Form/PeriodValueInput/constants';
-import { Button } from '../../UI/Button';
 import { ModalInterestTableChart } from '../ModalInterestTableChart';
-import { useScreenView } from '../../../analytics';
+
+import { IModalSavingXSelicProps } from './types';
+import * as S from './styles';
 
 export const ModalSavingXSelic = ({
   isVisible,

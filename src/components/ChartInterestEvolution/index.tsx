@@ -1,22 +1,19 @@
+import React from 'react';
 import { CartesianChart, Line, useChartPressState } from 'victory-native';
-import { Box } from '../UI/Box';
-import {
-  SharedValue,
-  runOnJS,
-  useAnimatedReaction,
-  useAnimatedStyle,
-  useDerivedValue,
-} from 'react-native-reanimated';
+import { Box } from '@components/UI/Box';
+import { SharedValue } from 'react-native-reanimated';
 import { Circle, useFont } from '@shopify/react-native-skia';
+import { colors } from '@resources/theme/colors';
+import { formatCurrency } from '@resources/utils/formatCurrency';
+import { Typograph } from '@components/UI/Typograph';
+
 import inter from '../../../assets/fonts/Inter-Bold.ttf';
+
 import { IChartInterestEvolutionProps } from './types';
-import { colors } from '../../resources/theme/colors';
-import { formatCurrency } from '../../resources/utils/formatCurrency';
 import { HeaderInfoChart } from './HeaderInfoChart';
-import { Typograph } from '../UI/Typograph';
 
 function ToolTip({ x, y }: { x: SharedValue<number>; y: SharedValue<number> }) {
-  return <Circle cx={x} cy={y} r={8} color={colors.chartColor}></Circle>;
+  return <Circle cx={x} cy={y} r={8} color={colors.chartColor} />;
 }
 
 export const ChartInterestEvolution: React.FC<IChartInterestEvolutionProps> = ({

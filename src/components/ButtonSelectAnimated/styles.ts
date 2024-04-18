@@ -1,7 +1,8 @@
 import Animated from 'react-native-reanimated';
 import styled, { css } from 'styled-components/native';
+import { colors } from '@resources/theme/colors';
+
 import { IButtonStyleProps } from './types';
-import { colors } from '../../resources/theme/colors';
 
 export const ButtonOpacity = styled.TouchableOpacity<IButtonStyleProps>`
   flex: 1;

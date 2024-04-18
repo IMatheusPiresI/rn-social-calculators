@@ -1,5 +1,5 @@
 import { TouchableOpacityProps } from 'react-native';
-import { IColors } from '../../resources/theme/colors';
+import { IColors } from '@resources/theme/colors';
 
 export type IButtonTypeRenderInterestProps = {
   label: string;

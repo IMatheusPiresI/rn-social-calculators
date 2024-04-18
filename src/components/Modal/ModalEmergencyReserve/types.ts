@@ -1,4 +1,4 @@
-import { IEmergenyReserveData } from '../../../screens/EmergencyReserve/hooks/useEmergencyReserve/types';
+import { IEmergenyReserveData } from '@screens/EmergencyReserve/hooks/useEmergencyReserve/types';
 
 export type IModalEmergencyReserveProps = {
   onClose: () => void;

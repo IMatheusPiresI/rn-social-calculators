@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { logScreenView } from '../../logScreenView/logScreenView';
-import { IScreenViewParams } from '../../logScreenView';
+import { logScreenView, IScreenViewParams } from '@analytics/index';
 
 /**
  * Hook que dispara o evento 'screen_view' para a ferramenta de analytics.

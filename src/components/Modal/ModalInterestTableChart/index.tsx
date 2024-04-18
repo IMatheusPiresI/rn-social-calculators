@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-
-import * as S from './styles';
-import { Box } from '../../UI/Box';
+import React from 'react';
+import { Box } from '@components/UI/Box';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { XCircle } from 'phosphor-react-native';
-import { colors } from '../../../resources/theme/colors';
-import { Typograph } from '../../UI/Typograph';
+import { colors } from '@resources/theme/colors';
+import { Typograph } from '@components/UI/Typograph';
+import { useScreenView } from '@analytics/index';
+
 import { SelectTypeRenderInterest } from './SelectTypeRenderInterest';
 import { IModalInterestTableChartProps } from './types';
-import { useScreenView } from '../../../analytics';
+import * as S from './styles';
 
 export const ModalInterestTableChart: React.FC<
   IModalInterestTableChartProps

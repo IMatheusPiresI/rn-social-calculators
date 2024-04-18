@@ -1,4 +1,4 @@
-import { ISavingXSelicData } from '../../../screens/SelicXSavingAccount/hooks/useSelicXSavingAccount/types';
+import { ISavingXSelicData } from '@screens/SelicXSavingAccount/hooks/useSelicXSavingAccount/types';
 
 export type IModalSavingXSelicProps = {
   onClose: () => void;
