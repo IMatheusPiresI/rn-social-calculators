@@ -8,11 +8,12 @@ import { colors } from '../../../resources/theme/colors';
 import { Typograph } from '../../UI/Typograph';
 import { SelectTypeRenderInterest } from './SelectTypeRenderInterest';
 import { IModalInterestTableChartProps } from './types';
-import { useNavigation } from '@react-navigation/native';
+import { useScreenView } from '../../../analytics';
 
 export const ModalInterestTableChart: React.FC<
   IModalInterestTableChartProps
 > = ({ dataChart, dataTable, isVisible, label, onClose }) => {
+  useScreenView('ModalSimplesInterest');
   const { top, bottom } = useSafeAreaInsets();
 
   return (
@@ -20,7 +21,7 @@ export const ModalInterestTableChart: React.FC<
       <Box
         flex={1}
         backgroundColor="primary"
-        paddingTop={top + 20}
+        paddingTop={top}
         paddingHorizontal={20}
       >
         <Box

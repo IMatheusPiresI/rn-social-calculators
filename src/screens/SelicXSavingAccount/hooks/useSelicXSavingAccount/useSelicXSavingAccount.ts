@@ -10,6 +10,7 @@ import { IDataTable } from '../../../../components/TableInterestEvolution/types'
 import { IDataChart } from '../../../../components/ChartInterestEvolution/types';
 import { getRemoteValue } from '../../../../services/firebase/remoteConfig';
 import { RemoteConfigKeys } from '../../../../services/firebase/remoteConfig/constants';
+import { LOG, logEvent } from '../../../../analytics';
 
 export const useSelicXSavingAccount = () => {
   const [period, setPeriod] = useState<PeriodType>(PeriodType.YEARLY);
@@ -110,6 +111,7 @@ export const useSelicXSavingAccount = () => {
       },
     };
 
+    logEvent(LOG.SELIC_SAVING_CALC);
     setDataSavingXSelic(data);
 
     openModalSavingXSelic();

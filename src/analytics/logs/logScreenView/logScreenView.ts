@@ -1,16 +1,13 @@
-import { FirebaseAnalytics } from '../instance';
+import { IScreenViewParams } from '.';
 import { LOG } from '../logEvent/constants';
 import { logEvent } from '../logEvent/logEvent';
 
 /**
- * Dispara um evento na ferramenta de analytics.
- * @param eventName - O nome do evento.
- * @param eventParams - Os parâmetros do evento.
+ * Dispara um evento de screen_view na ferramenta de analytics.
+ * @param screenName - Screen que o usuário está acessando no momento.
  */
 
-export const logScreenView = (
-  screenName: keyof ReactNavigation.RootParamList,
-) => {
+export const logScreenView = (screenName: IScreenViewParams) => {
   logEvent(LOG.SCREEN_VIEW, {
     screen_name: screenName,
   });

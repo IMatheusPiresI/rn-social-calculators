@@ -8,7 +8,7 @@ import { Typograph } from '../../components/UI/Typograph';
 import { useSelicXSavingAccount } from './hooks/useSelicXSavingAccount';
 import { PeriodValueInput } from '../../components/Form/PeriodValueInput';
 import { ModalSavingXSelic } from '../../components/Modal/ModalSavingXSelic';
-import { useScreenView } from '../../analytics/logs/hooks/useScreenView';
+import { useScreenView } from '../../analytics';
 
 const SelicXSavingAccount = () => {
   useScreenView('SelicXSavingAccount');

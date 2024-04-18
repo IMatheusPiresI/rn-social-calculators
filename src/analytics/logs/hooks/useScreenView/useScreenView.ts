@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { logScreenView } from '../logScreenView/logScreenView';
+import { logScreenView } from '../../logScreenView/logScreenView';
+import { IScreenViewParams } from '../../logScreenView';
 
 /**
  * Hook que dispara o evento 'screen_view' para a ferramenta de analytics.
@@ -10,9 +11,7 @@ import { logScreenView } from '../logScreenView/logScreenView';
  * }
  */
 
-export const useScreenView = (
-  screenName: keyof ReactNavigation.RootParamList,
-) => {
+export const useScreenView = (screenName: IScreenViewParams) => {
   useEffect(() => {
     logScreenView(screenName);
   }, [screenName]);

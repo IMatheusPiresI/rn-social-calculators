@@ -14,6 +14,7 @@ import {
   IResponseSimpleInterest,
 } from './types';
 import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
+import { LOG, logEvent } from '../../../../analytics/logs/logEvent';
 
 export const useSimpleInterest = () => {
   const { control, errors, isValid, handleSubmit } = useSimpleInterestForm();
@@ -109,6 +110,7 @@ export const useSimpleInterest = () => {
       }),
     );
 
+    logEvent(LOG.SIMPLE_INTEREST_CALC);
     setDataForm(dataChart);
     setDataTable(dataTable);
     openModalInterest();

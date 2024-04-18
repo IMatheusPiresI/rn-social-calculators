@@ -3,7 +3,7 @@ import { Frame } from '../../components/UI/Frame';
 import { Typograph } from '../../components/UI/Typograph';
 import { Box } from '../../components/UI/Box';
 import { ContainerCalculatorTypes } from '../../components/ContainerCalculatorTypes/ContainerCalculatorTypes';
-import { useScreenView } from '../../analytics/logs/hooks/useScreenView';
+import { useScreenView } from '../../analytics';
 
 const Home: React.FC = () => {
   useScreenView('Home');

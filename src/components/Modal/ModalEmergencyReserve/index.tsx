@@ -8,12 +8,14 @@ import { colors } from '../../../resources/theme/colors';
 import { Typograph } from '../../UI/Typograph';
 import { IModalEmergencyReserveProps } from './types';
 import { formatCurrency } from '../../../resources/utils/formatCurrency';
+import { useScreenView } from '../../../analytics';
 
 export const ModalEmergencyReserve = ({
   isVisible,
   emergencyReserveData,
   onClose,
 }: IModalEmergencyReserveProps) => {
+  useScreenView('ModalEmergencyReserve');
   const { top } = useSafeAreaInsets();
 
   return (
@@ -21,7 +23,7 @@ export const ModalEmergencyReserve = ({
       <Box
         flex={1}
         backgroundColor="primary"
-        paddingTop={top + 20}
+        paddingTop={top}
         paddingHorizontal={20}
       >
         <Box

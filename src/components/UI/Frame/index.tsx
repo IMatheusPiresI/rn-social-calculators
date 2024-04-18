@@ -5,7 +5,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { spacing } from '../../../resources/theme/spacing';
 import { Box } from '../Box';
 import { FrameHeader } from '../FrameHeader';
-import { KeyboardAvoidingView, Platform } from 'react-native';
 import { KeyboardAvoid } from '../KeyboardAvoid';
 
 export const Frame: React.FC<PropsWithChildren<IFrameProps>> = ({
@@ -24,7 +23,7 @@ export const Frame: React.FC<PropsWithChildren<IFrameProps>> = ({
           <Box
             flex={1}
             paddingBottom={bottom + spacing.defaultSpacing}
-            paddingTop={spacing.defaultSpacing + top}
+            paddingTop={top}
           >
             <Box marginBottom={16}>
               <FrameHeader title={title} canGoBack={canGoBack} />

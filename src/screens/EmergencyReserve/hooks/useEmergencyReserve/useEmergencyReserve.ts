@@ -10,6 +10,7 @@ import {
   profissionEmergencyReserveMonthlyTime,
 } from './constants';
 import { IEmergenyReserveData } from './types';
+import { LOG, logEvent } from '../../../../analytics';
 
 export const useEmergencyReserve = () => {
   const { control, errors, isValid, handleSubmit } = useEmergencyReserveForm();
@@ -49,6 +50,7 @@ export const useEmergencyReserve = () => {
     const reserveEmergencyValue = fixedCost * profissionMonthlyTime;
     const timeFinishInMonth = reserveEmergencyValue / saveMonthly;
 
+    logEvent(LOG.EMERGENCY_RESERVE_CALC);
     setEmergencyReserveData({
       reserveEmergencyValue,
       saveMonthly,

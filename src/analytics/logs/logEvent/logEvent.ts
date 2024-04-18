@@ -8,6 +8,6 @@ import { EventParams } from './types';
  * @param eventParams - Os parâmetros do evento.
  */
 
-export const logEvent = (eventName: LOG, eventParams: EventParams) => {
+export const logEvent = (eventName: string, eventParams?: EventParams) => {
   FirebaseAnalytics.logEvent(eventName, eventParams);
 };

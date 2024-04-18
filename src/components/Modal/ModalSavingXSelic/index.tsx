@@ -11,12 +11,14 @@ import { formatCurrency } from '../../../resources/utils/formatCurrency';
 import { PeriodType } from '../../Form/PeriodValueInput/constants';
 import { Button } from '../../UI/Button';
 import { ModalInterestTableChart } from '../ModalInterestTableChart';
+import { useScreenView } from '../../../analytics';
 
 export const ModalSavingXSelic = ({
   isVisible,
   dataModalSaving,
   onClose,
 }: IModalSavingXSelicProps) => {
+  useScreenView('ModalSavingXSelic');
   const { top } = useSafeAreaInsets();
   const [showModalSelicInterest, setShowModalSelicInterest] =
     useState<boolean>(false);
@@ -57,7 +59,7 @@ export const ModalSavingXSelic = ({
       <Box
         flex={1}
         backgroundColor="primary"
-        paddingTop={top + 20}
+        paddingTop={top}
         paddingHorizontal={20}
       >
         <Box

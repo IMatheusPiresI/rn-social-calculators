@@ -9,6 +9,7 @@ import {
 } from '../useCompoundInterestForm';
 import { PeriodType } from '../../../../components/Form/PeriodValueInput/constants';
 import { getCompoundInterest } from '../../../../resources/utils/getCompoundInsterest';
+import { LOG, logEvent } from '../../../../analytics';
 
 export const useCompoundInterest = () => {
   const { control, handleSubmit, errors, isValid } = useCompoundInterestForm();
@@ -56,6 +57,7 @@ export const useCompoundInterest = () => {
       total: data.monthValue,
     }));
 
+    logEvent(LOG.COMPOUND_INTEREST_CALC);
     setDataChart(dataChart);
     setDataTable(dataTable);
     openModalInterest();

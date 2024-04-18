@@ -11,12 +11,14 @@ import {
   profissions,
   profissionsMock,
 } from '../../../screens/EmergencyReserve/hooks/useEmergencyReserve/constants';
+import { useScreenView } from '../../../analytics';
 
 export const ModalSelectProfission = ({
   isVisible,
   onClose,
   onSelectProfission,
 }: IModalSelectProfissionProps) => {
+  useScreenView('ModalSelectProfission');
   const { top, bottom } = useSafeAreaInsets();
 
   return (
@@ -24,7 +26,7 @@ export const ModalSelectProfission = ({
       <Box
         flex={1}
         backgroundColor="primary"
-        paddingTop={top + 20}
+        paddingTop={top}
         paddingHorizontal={20}
       >
         <Box
