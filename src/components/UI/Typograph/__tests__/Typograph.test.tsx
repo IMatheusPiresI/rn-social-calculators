@@ -4,7 +4,7 @@ import { WrapperTheme } from '@resources/helpers/tests/WrapperTheme';
 
 import { Typograph } from '..';
 
-describe('Button Tests', () => {
+describe('Typograph Tests', () => {
   it('should be render correct text', () => {
     render(
       <WrapperTheme>
