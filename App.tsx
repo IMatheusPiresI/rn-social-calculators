@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from './src/resources/theme';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import AppRoutes from './src/routes';
 import { StatusBar } from 'react-native';
+
+import theme from './src/resources/theme';
+import AppRoutes from './src/routes';
 import { fetchRemoteConfig } from './src/services/firebase/remoteConfig';
 
 const App = () => {

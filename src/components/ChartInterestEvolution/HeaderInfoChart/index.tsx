@@ -1,3 +1,4 @@
+import React from 'react';
 import { runOnJS, useAnimatedReaction } from 'react-native-reanimated';
 import { colors } from '@resources/theme/colors';
 import { Box } from '@components/UI/Box';

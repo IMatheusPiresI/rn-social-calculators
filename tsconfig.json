@@ -2,6 +2,9 @@
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "jsx": "react",
+    "types": ["jest"],
+    "skipLibCheck": true,
     "paths": {
       "*": ["src/*"],
       "tests": ["tests/*"],
