@@ -23,7 +23,7 @@ describe('KeyboardAvoid Tests', () => {
       const Platform = jest.requireActual(
         'react-native/Libraries/Utilities/Platform',
       );
-      Platform.OS = 'android'; // Define o sistema operacional como iOS para este teste
+      Platform.OS = 'android';
       return Platform;
     });
     render(
@@ -43,7 +43,7 @@ describe('KeyboardAvoid Tests', () => {
       const Platform = jest.requireActual(
         'react-native/Libraries/Utilities/Platform',
       );
-      Platform.OS = 'ios'; // Define o sistema operacional como iOS para este teste
+      Platform.OS = 'ios';
       return Platform;
     });
     render(
