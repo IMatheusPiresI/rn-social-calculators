@@ -7,7 +7,7 @@ import { Box } from '..';
 
 describe('Box Tests', () => {
   it('should be render Box component', () => {
-    render(<Box width={20} height={20} />);
+    render(<Box width={20} height={20} testID="box" />);
 
     const box = screen.getByTestId('box');
 
@@ -17,7 +17,12 @@ describe('Box Tests', () => {
   it('should be render correct background selected', () => {
     render(
       <WrapperTheme>
-        <Box width={20} height={20} backgroundColor="mainBackground" />
+        <Box
+          width={20}
+          height={20}
+          backgroundColor="mainBackground"
+          testID="box"
+        />
       </WrapperTheme>,
     );
 

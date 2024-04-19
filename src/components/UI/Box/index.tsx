@@ -5,9 +5,10 @@ import { IBoxProps } from './types';
 
 export const Box: React.FC<PropsWithChildren<IBoxProps>> = ({
   children,
+  testID,
   ...rest
 }) => (
-  <S.Box {...rest} testID="box">
+  <S.Box {...rest} testID={testID}>
     {children}
   </S.Box>
 );

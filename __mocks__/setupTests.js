@@ -32,3 +32,8 @@ jest.mock('@shopify/react-native-skia', () => {
 
   return null;
 });
+
+jest.mock('@react-navigation/native', () => ({
+  ...jest.requireActual('@react-navigation/native'),
+  useNavigation: jest.fn(),
+}));

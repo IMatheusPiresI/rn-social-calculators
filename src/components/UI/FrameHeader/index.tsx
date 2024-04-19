@@ -27,10 +27,11 @@ export const FrameHeader: React.FC<IFrameHeaderProps> = ({
       borderBottomColor={colors.primary}
       paddingBottom={12}
       paddingHorizontal={20}
+      testID="frameHeader"
     >
       <Box flexDirection="row" gap={12} alignItems="center">
         {canGoBack ? (
-          <S.ButtonGoBack onPress={handleGoBack}>
+          <S.ButtonGoBack onPress={handleGoBack} testID="frameHeaderGoBack">
             <ArrowCircleLeft size={35} color={colors.primary} />
           </S.ButtonGoBack>
         ) : (
