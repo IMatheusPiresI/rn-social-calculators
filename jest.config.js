@@ -6,14 +6,10 @@ module.exports = {
     '<rootDir>/__mocks__/setupTests.js',
     './node_modules/react-native-gesture-handler/jestSetup.js',
   ],
-
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   transformIgnorePatterns: [
     'node_modules/(?!@react-native|react-native|react-navigation|@react-navigation|@shopify/react-native-skia|victory-native/(?!(lib)))',
   ],
-  transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-  },
   moduleNameMapper: {
     '^@components(.*)$': '<rootDir>/src/components$1',
     '^@constants(.*)$': '<rootDir>/src/constants$1',
@@ -25,5 +21,8 @@ module.exports = {
     '^@routes(.*)$': '<rootDir>src/routes$1',
     '^@screens(.*)$': '<rootDir>src/screens$1',
     '^@services(.*)$': '<rootDir>src/services$1',
+  },
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
   },
 };

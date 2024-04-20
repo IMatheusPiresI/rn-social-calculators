@@ -1,9 +1,11 @@
 import { FrameHeader } from '@components/UI/FrameHeader';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import React from 'react';
-import { WrapperNavigator } from '@resources/helpers/tests/WrapperNavigator';
-import { WrapperTheme } from '@resources/helpers/tests/WrapperTheme';
 import { useNavigation } from '@react-navigation/native';
+import {
+  WrapperNavigator,
+  WrapperTheme,
+} from '@resources/helpers/tests/Wrapper';
 
 jest.mock('phosphor-react-native', () => ({
   ArrowCircleLeft: jest.fn().mockReturnValue(null),

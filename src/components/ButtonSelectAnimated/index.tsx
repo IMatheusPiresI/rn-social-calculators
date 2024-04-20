@@ -57,9 +57,18 @@ export const ButtonSelectAnimated: React.FC<IButtonTypeRenderInterestProps> = ({
       {...rest}
       borderColor={borderColor}
       borderHorizontal={borderHorizontal}
+      testID="buttonSelectAnimated"
     >
-      <S.AnimatedBox style={rAnimatedBoxSelect}>
-        <S.AnimatedText style={rAnimatedTextSelect}>{label}</S.AnimatedText>
+      <S.AnimatedBox
+        testID="buttonSelectAnimatedBox"
+        style={rAnimatedBoxSelect}
+      >
+        <S.AnimatedText
+          testID="buttonSelectAnimatedText"
+          style={rAnimatedTextSelect}
+        >
+          {label}
+        </S.AnimatedText>
       </S.AnimatedBox>
     </S.ButtonOpacity>
   );

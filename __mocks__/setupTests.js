@@ -1,3 +1,5 @@
+import mockSafeAreaContext from 'react-native-safe-area-context/jest/mock';
+require('react-native-reanimated').setUpTests();
 jest.mock('react-native/Libraries/EventEmitter/NativeEventEmitter');
 
 const mockedFirebaseAnalyticsLogEvent = jest.fn();
@@ -37,3 +39,15 @@ jest.mock('@react-navigation/native', () => ({
   ...jest.requireActual('@react-navigation/native'),
   useNavigation: jest.fn(),
 }));
+
+jest.mock('react-native-safe-area-context', () => mockSafeAreaContext);
+jest.mock('react-native-reanimated', () => {
+  const Reanimated = jest.requireActual('react-native-reanimated');
+  return {
+    ...Reanimated,
+    useSharedValue: jest.fn().mockReturnValue({ value: 0 }),
+    useAnimatedStyle: jest.fn().mockImplementation((style) => style()),
+    View: 'Animated.View',
+    Text: 'Animated.Text',
+  };
+});

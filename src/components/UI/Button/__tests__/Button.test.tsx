@@ -1,7 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { WrapperTheme } from '@resources/helpers/tests/WrapperTheme';
 import theme from '@resources/theme';
+import { WrapperTheme } from '@resources/helpers/tests/Wrapper';
 
 import { Button } from '..';
 

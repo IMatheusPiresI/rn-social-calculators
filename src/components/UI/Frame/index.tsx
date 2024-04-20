@@ -19,7 +19,7 @@ export const Frame: React.FC<PropsWithChildren<IFrameProps>> = ({
   const { top, bottom } = useSafeAreaInsets();
   const Container = !scrollable ? Box : S.ScrollContainer;
   return (
-    <Box backgroundColor={backgroundColor} flex={1}>
+    <Box backgroundColor={backgroundColor} flex={1} testID="frame">
       <KeyboardAvoid>
         <Container flex={1}>
           <Box

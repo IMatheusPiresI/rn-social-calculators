@@ -1,6 +1,5 @@
 {
   "name": "SocialCalculator",
-  "type": "commonjs",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,6 +8,7 @@
     "lint": "eslint ./src",
     "start": "react-native start",
     "test": "jest",
+    "coverage": "jest --coverage",
     "pod": "cd ios && pod install",
     "android:staging": "cd android && ./gradlew assembleRelease && open app/build/outputs/apk/release"
   },

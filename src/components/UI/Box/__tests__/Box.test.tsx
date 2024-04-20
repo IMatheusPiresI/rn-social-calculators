@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react-native';
 import React from 'react';
-import { WrapperTheme } from '@resources/helpers/tests/WrapperTheme';
 import theme from '@resources/theme';
+import { WrapperTheme } from '@resources/helpers/tests/Wrapper';
 
 import { Box } from '..';
 

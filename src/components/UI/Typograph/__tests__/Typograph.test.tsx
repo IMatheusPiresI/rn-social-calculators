@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react-native';
-import { WrapperTheme } from '@resources/helpers/tests/WrapperTheme';
+import { WrapperTheme } from '@resources/helpers/tests/Wrapper';
 
 import { Typograph } from '..';
 
