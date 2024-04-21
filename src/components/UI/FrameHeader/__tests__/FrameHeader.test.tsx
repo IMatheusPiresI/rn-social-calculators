@@ -7,10 +7,6 @@ import {
   WrapperTheme,
 } from '@resources/helpers/tests/Wrapper';
 
-jest.mock('phosphor-react-native', () => ({
-  ArrowCircleLeft: jest.fn().mockReturnValue(null),
-}));
-
 describe('Frame Tests', () => {
   it('should be render Frame Header', () => {
     render(

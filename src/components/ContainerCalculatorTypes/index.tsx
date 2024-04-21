@@ -28,18 +28,25 @@ export const ContainerCalculatorTypes: React.FC = () => {
   };
 
   return (
-    <Box alignItems="center" justifyContent="center" width="100%">
+    <Box
+      alignItems="center"
+      justifyContent="center"
+      width="100%"
+      testID="containerCalculatorTypes"
+    >
       <Box width="100%" gap={20}>
         <Box flexDirection="row" gap={20}>
           <CardCalculatorType
             title="Juros Simples"
             image={CalculatorSimpleIMG}
             onPress={handleNavigateToSimpleInterest}
+            testID="buttonSimpleInterest"
           />
           <CardCalculatorType
             title="Juros Compostos"
             image={CalculatorCompostIMG}
             onPress={handleNavigateToCompoundInterest}
+            testID="buttonCompoundInterest"
           />
         </Box>
         <Box flexDirection="row" gap={20}>
@@ -47,11 +54,13 @@ export const ContainerCalculatorTypes: React.FC = () => {
             title={`Poupança\nx\nSelic`}
             image={CalculatorHouseIMG}
             onPress={handleNavigateToSelicXSavingAccount}
+            testID="buttonSelicXSavingAccount"
           />
           <CardCalculatorType
             title={`Reserva\nde\nEmergência`}
             image={CalculatorReserveIMG}
             onPress={handleNavigateToEmergencyReserve}
+            testID="buttonEmergencyReserve"
           />
         </Box>
       </Box>

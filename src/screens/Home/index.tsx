@@ -2,7 +2,7 @@ import React from 'react';
 import { Frame } from '@components/UI/Frame';
 import { Typograph } from '@components/UI/Typograph';
 import { Box } from '@components/UI/Box';
-import { ContainerCalculatorTypes } from '@components/ContainerCalculatorTypes/ContainerCalculatorTypes';
+import { ContainerCalculatorTypes } from 'components/ContainerCalculatorTypes';
 import { useScreenView } from '@analytics/index';
 
 const Home: React.FC = () => {

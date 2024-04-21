@@ -18,7 +18,7 @@ export const BoxSelectPercentage = ({
   };
 
   return (
-    <Box>
+    <Box testID="boxSelectPercentage">
       {label && (
         <Typograph color="primary" font="INTER_BOLD" fontSize={14}>
           {label}

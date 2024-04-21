@@ -38,7 +38,10 @@ export const ButtonSelectProfission = ({
           {label}
         </Typograph>
       </Box>
-      <S.ButtonOpacity onPress={openModalSelectProfission}>
+      <S.ButtonOpacity
+        onPress={openModalSelectProfission}
+        testID="buttonSelectProfission"
+      >
         <Typograph color="primary" font="INTER_MEDIUM" fontSize={14}>
           {profissions[profissionSelected]}
         </Typograph>

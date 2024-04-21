@@ -22,7 +22,12 @@ export const ModalSelectProfission = ({
   const { top, bottom } = useSafeAreaInsets();
 
   return (
-    <S.RNModal visible={isVisible} transparent animationType="slide">
+    <S.RNModal
+      visible={isVisible}
+      transparent
+      animationType="slide"
+      testID="modalSelectProfission"
+    >
       <Box
         flex={1}
         backgroundColor="primary"

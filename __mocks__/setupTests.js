@@ -51,3 +51,8 @@ jest.mock('react-native-reanimated', () => {
     Text: 'Animated.Text',
   };
 });
+
+jest.mock('phosphor-react-native', () => ({
+  ArrowCircleLeft: jest.fn().mockReturnValue('ArrowCircleLeft.svg'),
+  XCircle: jest.fn().mockReturnValue('XCircle.svg'),
+}));
