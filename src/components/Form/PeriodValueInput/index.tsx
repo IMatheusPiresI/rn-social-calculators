@@ -20,7 +20,7 @@ export const PeriodValueInput: React.FC<ITextInputFormProps> = ({
   onSelectPeriod,
   ...rest
 }) => (
-  <Box>
+  <Box testID="periodValueInput">
     <Box marginBottom={6}>
       <Typograph color="primary" font="INTER_BOLD" fontSize={14}>
         {label}
@@ -54,6 +54,7 @@ export const PeriodValueInput: React.FC<ITextInputFormProps> = ({
           boxActiveColor="primary"
           textActiveColor="textLight"
           textInativeColor="primary"
+          testID="periodValueInputYealyButton"
         />
         <ButtonSelectAnimated
           isActive={typeSelected === PeriodType.MONTHLY}
@@ -63,6 +64,7 @@ export const PeriodValueInput: React.FC<ITextInputFormProps> = ({
           boxActiveColor="primary"
           textActiveColor="textLight"
           textInativeColor="primary"
+          testID="periodValueInputMonthButton"
         />
       </Box>
     </Box>

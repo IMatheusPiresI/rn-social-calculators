@@ -19,7 +19,7 @@ export const MaskTextInputForm: React.FC<ITextInputFormProps> = ({
     name={name}
     control={control}
     render={({ field: { onChange, value } }) => (
-      <Box>
+      <Box testID="maskTextInputForm">
         {label && (
           <Box marginBottom={6}>
             <Typograph color="primary" font="INTER_BOLD" fontSize={14}>

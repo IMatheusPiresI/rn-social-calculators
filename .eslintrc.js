@@ -42,5 +42,6 @@ module.exports = {
     'import/prefer-default-export': 0,
     'import/no-named-as-default': 0,
     'no-unused-vars': 0,
+    'react-hooks/rules-of-hooks': 0,
   },
 };

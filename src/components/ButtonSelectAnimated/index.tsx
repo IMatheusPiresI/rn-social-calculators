@@ -54,10 +54,10 @@ export const ButtonSelectAnimated: React.FC<IButtonTypeRenderInterestProps> = ({
 
   return (
     <S.ButtonOpacity
+      testID="buttonSelectAnimated"
       {...rest}
       borderColor={borderColor}
       borderHorizontal={borderHorizontal}
-      testID="buttonSelectAnimated"
     >
       <S.AnimatedBox
         testID="buttonSelectAnimatedBox"

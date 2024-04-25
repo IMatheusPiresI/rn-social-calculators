@@ -2,9 +2,17 @@ import React from 'react';
 import { colors } from '@resources/theme/colors';
 import { Box } from '@components/UI/Box';
 import { Typograph } from '@components/UI/Typograph';
+import { formatCurrency } from '@resources/utils/formatCurrency';
 
-export const HeaderTable: React.FC = () => (
-  <Box flexDirection="row" borderWidth={1} borderColor={colors.tableColor}>
+import { ICardItemTableProps } from './types';
+
+export const CardItemTable: React.FC<ICardItemTableProps> = ({ item }) => (
+  <Box
+    flexDirection="row"
+    borderWidth={1}
+    borderColor={colors.tableColor}
+    testID="cardItemTable"
+  >
     <Box
       width={50}
       borderRightWidth={1}
@@ -13,8 +21,8 @@ export const HeaderTable: React.FC = () => (
       alignItems="center"
       justifyContent="center"
     >
-      <Typograph alignment="center" color="textLight" font="INTER_BOLD">
-        Mês
+      <Typograph alignment="center" color="textLight" font="INTER_MEDIUM">
+        {item.months}
       </Typograph>
     </Box>
     <Box
@@ -25,8 +33,8 @@ export const HeaderTable: React.FC = () => (
       alignItems="center"
       justifyContent="center"
     >
-      <Typograph alignment="center" color="textLight" font="INTER_BOLD">
-        Juros
+      <Typograph alignment="center" color="textLight" font="INTER_MEDIUM">
+        {formatCurrency(item.monthlyInterest)}
       </Typograph>
     </Box>
     <Box
@@ -37,8 +45,8 @@ export const HeaderTable: React.FC = () => (
       alignItems="center"
       justifyContent="center"
     >
-      <Typograph alignment="center" color="textLight" font="INTER_BOLD">
-        Total investido
+      <Typograph alignment="center" color="textLight" font="INTER_MEDIUM">
+        {formatCurrency(item.totalInvested)}
       </Typograph>
     </Box>
     <Box
@@ -49,8 +57,8 @@ export const HeaderTable: React.FC = () => (
       alignItems="center"
       justifyContent="center"
     >
-      <Typograph alignment="center" color="textLight" font="INTER_BOLD">
-        Total Juros
+      <Typograph alignment="center" color="textLight" font="INTER_MEDIUM">
+        {formatCurrency(item.totalInterest)}
       </Typograph>
     </Box>
     <Box
@@ -59,8 +67,8 @@ export const HeaderTable: React.FC = () => (
       alignItems="center"
       justifyContent="center"
     >
-      <Typograph alignment="center" color="textLight" font="INTER_BOLD">
-        Total Acumulado
+      <Typograph alignment="center" color="textLight" font="INTER_MEDIUM">
+        {formatCurrency(item.total)}
       </Typograph>
     </Box>
   </Box>

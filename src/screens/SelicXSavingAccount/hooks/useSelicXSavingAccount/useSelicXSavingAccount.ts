@@ -79,6 +79,8 @@ export const useSelicXSavingAccount = () => {
       }),
     );
 
+    console.log(selicDataChart);
+
     const savingDataChart: IDataChart[] = savingValue.monthsInterest.map(
       (data) => ({
         initialValue: savingValue.initialValue,

@@ -8,7 +8,7 @@ module.exports = {
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
   transformIgnorePatterns: [
-    'node_modules/(?!@react-native|react-native|react-navigation|@react-navigation|@shopify/react-native-skia|victory-native/(?!(lib)))',
+    'node_modules/(?!@react-native|react-native|react-navigation|@react-navigation|@shopify/react-native-skia|victory-native|d3-scale/(?!(lib)))',
   ],
   moduleNameMapper: {
     '^@components(.*)$': '<rootDir>/src/components$1',
@@ -21,6 +21,7 @@ module.exports = {
     '^@routes(.*)$': '<rootDir>src/routes$1',
     '^@screens(.*)$': '<rootDir>src/screens$1',
     '^@services(.*)$': '<rootDir>src/services$1',
+    '\\.(ttf)$': '<rootDir>/__mocks__/ttfMock.js',
   },
   transform: {
     '^.+\\.tsx?$': 'ts-jest',

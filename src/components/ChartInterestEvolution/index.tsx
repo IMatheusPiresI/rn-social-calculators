@@ -10,7 +10,7 @@ import { Typograph } from '@components/UI/Typograph';
 import inter from '../../../assets/fonts/Inter-Bold.ttf';
 
 import { IChartInterestEvolutionProps } from './types';
-import { HeaderInfoChart } from './HeaderInfoChart';
+import { HeaderInfoChart } from './_components/HeaderInfoChart';
 
 function ToolTip({ x, y }: { x: SharedValue<number>; y: SharedValue<number> }) {
   return <Circle cx={x} cy={y} r={8} color={colors.chartColor} />;
@@ -20,6 +20,7 @@ export const ChartInterestEvolution: React.FC<IChartInterestEvolutionProps> = ({
   dataChart,
 }) => {
   const font = useFont(inter, 10);
+
   const chartColor = colors.chartColor;
   const initialData = dataChart[0];
   const { state } = useChartPressState({
@@ -38,7 +39,7 @@ export const ChartInterestEvolution: React.FC<IChartInterestEvolutionProps> = ({
   const lastDomainMonthly = dataChart.length;
 
   return (
-    <Box flex={1}>
+    <Box flex={1} testID="chartInterestEvolution">
       <Box marginBottom={12}>
         <HeaderInfoChart
           accumulatedValue={state.y.monthlyInterest.value}
