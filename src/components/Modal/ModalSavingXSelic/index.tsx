@@ -42,21 +42,25 @@ export const ModalSavingXSelic = ({
     setShowModalSavingInterest(false);
   };
 
-  const getPeriodString = (): string => {
-    if (!dataModalSaving) return '';
+  const getPeriodString = (period: PeriodType, periodTime: number): string => {
     let periodName = '';
 
-    if (dataModalSaving.period === PeriodType.YEARLY) {
-      periodName = dataModalSaving.periodTime > 1 ? 'anos' : 'ano';
+    if (period === PeriodType.YEARLY) {
+      periodName = periodTime > 1 ? 'anos' : 'ano';
     } else {
-      periodName = dataModalSaving.periodTime > 1 ? 'meses' : 'mês';
+      periodName = periodTime > 1 ? 'meses' : 'mês';
     }
 
-    return `${dataModalSaving.periodTime} ${periodName}`;
+    return `${periodTime} ${periodName}`;
   };
 
   return (
-    <S.RNModal visible={isVisible} transparent animationType="slide">
+    <S.RNModal
+      visible={isVisible}
+      transparent
+      animationType="slide"
+      testID="modalSavingXSelic"
+    >
       <Box
         flex={1}
         backgroundColor="primary"
@@ -143,7 +147,10 @@ export const ModalSavingXSelic = ({
                 No período de:
               </Typograph>
               <Typograph fontSize={26} color="textLight" font="INTER_BOLD">
-                {getPeriodString()}
+                {getPeriodString(
+                  dataModalSaving.period,
+                  dataModalSaving.periodTime,
+                )}
               </Typograph>
             </Box>
             <Box gap={12} paddingHorizontal={16} marginTop={12}>
@@ -154,11 +161,13 @@ export const ModalSavingXSelic = ({
                 title="Poupança"
                 variant="secondary"
                 onPress={handleOpenModalSavingInterest}
+                testID="modalSavingXSelicButtonSaving"
               />
               <Button
                 title="Selic"
                 variant="secondary"
                 onPress={handleOpenModalSelicInterest}
+                testID="modalSavingXSelicButtonSelic"
               />
             </Box>
             <ModalInterestTableChart

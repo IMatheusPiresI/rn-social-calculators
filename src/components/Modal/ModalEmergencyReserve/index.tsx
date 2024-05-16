@@ -19,7 +19,12 @@ export const ModalEmergencyReserve = ({
   const { top } = useSafeAreaInsets();
 
   return (
-    <S.RNModal visible={isVisible} transparent animationType="slide">
+    <S.RNModal
+      visible={isVisible}
+      transparent
+      animationType="slide"
+      testID="modalEmergencyReserve"
+    >
       <Box
         flex={1}
         backgroundColor="primary"
@@ -36,7 +41,10 @@ export const ModalEmergencyReserve = ({
               Reserva de Emergência
             </Typograph>
           </Box>
-          <S.ButtonOpacity onPress={onClose}>
+          <S.ButtonOpacity
+            onPress={onClose}
+            testID="modalEmergencyReserveCloseButton"
+          >
             <XCircle color={colors.iconLight} size={56} weight="thin" />
           </S.ButtonOpacity>
         </Box>

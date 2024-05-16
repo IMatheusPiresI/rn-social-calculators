@@ -17,7 +17,12 @@ export const ModalInterestTableChart: React.FC<
   const { top, bottom } = useSafeAreaInsets();
 
   return (
-    <S.RNModal visible={isVisible} transparent animationType="slide">
+    <S.RNModal
+      visible={isVisible}
+      transparent
+      animationType="slide"
+      testID="modalInterestTableChart"
+    >
       <Box
         flex={1}
         backgroundColor="primary"
@@ -34,7 +39,10 @@ export const ModalInterestTableChart: React.FC<
               {label ?? 'Rendimento'}
             </Typograph>
           </Box>
-          <S.ButtonOpacity onPress={onClose}>
+          <S.ButtonOpacity
+            onPress={onClose}
+            testID="modalInterestTableChartCloseButton"
+          >
             <XCircle color={colors.iconLight} size={56} weight="thin" />
           </S.ButtonOpacity>
         </Box>

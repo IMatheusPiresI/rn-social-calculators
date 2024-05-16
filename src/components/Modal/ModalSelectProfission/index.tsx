@@ -44,7 +44,10 @@ export const ModalSelectProfission = ({
               Selecione sua profissão
             </Typograph>
           </Box>
-          <S.ButtonOpacity onPress={onClose}>
+          <S.ButtonOpacity
+            onPress={onClose}
+            testID="modalSelectProfissionCloseButton"
+          >
             <XCircle color={colors.iconLight} size={56} weight="thin" />
           </S.ButtonOpacity>
         </Box>

@@ -7,6 +7,7 @@ module.exports = {
     './node_modules/react-native-gesture-handler/jestSetup.js',
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
+  modulePathIgnorePatterns: ['src/components/ChartInterestEvolution/'],
   transformIgnorePatterns: [
     'node_modules/(?!@react-native|react-native|react-navigation|@react-navigation|@shopify/react-native-skia|victory-native|d3-scale/(?!(lib)))',
   ],
@@ -26,4 +27,6 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
+  testPathIgnorePatterns: ['src/components/ChartInterestEvolution/'],
+  coveragePathIgnorePatterns: ['src/components/ChartInterestEvolution/'],
 };

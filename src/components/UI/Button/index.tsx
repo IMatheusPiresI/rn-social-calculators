@@ -6,7 +6,7 @@ import * as S from './styles';
 import { IButtonProps } from './types';
 
 export const Button: React.FC<IButtonProps> = ({ title, ...rest }) => (
-  <S.Button {...rest} testID="button">
+  <S.Button testID="button" {...rest}>
     <Typograph
       color={rest.variant === 'secondary' ? 'primary' : 'textLight'}
       fontSize={16}

@@ -56,3 +56,27 @@ jest.mock('phosphor-react-native', () => ({
   ArrowCircleLeft: jest.fn().mockReturnValue('ArrowCircleLeft.svg'),
   XCircle: jest.fn().mockReturnValue('XCircle.svg'),
 }));
+
+jest.mock('victory-native', () => ({
+  CartesianChart: 'CartesianChart',
+  useChartPressState: jest.fn(() => ({
+    state: {
+      x: {
+        value: 0,
+      },
+      y: {
+        months: 0,
+        monthlyInterest: {
+          value: 0,
+        },
+        initialValue: {
+          value: 0,
+        },
+      },
+    },
+  })),
+}));
+
+jest.mock('@shopify/react-native-skia', () => ({
+  useFont: jest.fn(),
+}));
